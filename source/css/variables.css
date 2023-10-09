@@ -1,0 +1,34 @@
+:root {
+  --font-family-primary: "Inter";
+  --bg-white: #FDFDFE;
+  --bg-ultra-light-grey: #F3F7FA;
+  --bg-light-grey: #E9EEF2;
+  --font-grey: #A2A2A2;
+  --font-medium-grey: #6B6B6B;
+  --font-dark-grey: #464646;
+  --font-blue: #066DCA;
+  --font-white: #FDFDFE;
+  --bt-ultra-light-grey: #F3F7FA;
+  --bt-light-blue: #D3E3F3;
+  --bt-blue: #066DCA;
+  --elements-white: #FDFDFE;
+  --elements-ultra-light-grey: #F3F7FA;
+  --elements-light-grey: #E9EEF2;
+  --elements-dark-grey: #464646;
+  --elements-light-blue: #D3E3F3;
+  --elements-blue: #066DCA;
+  --color-grey-00: #FDFDFE;
+  --color-grey-20: #D8D8D9;
+  --color-grey-40: #B4B4B4;
+  --color-grey-60: #8F8F90;
+  --color-grey-80: #6B6B6B;
+  --color-grey-100: #464646;
+  --color-grey-dark: #3C3C3C;
+  --color-blue-00: #FDFDFE;
+  --color-blue-20: #CBE0F3;
+  --color-blue-40: #9AC4E9;
+  --color-blue-60: #69A6DF;
+  --color-blue-80: #388AD5;
+  --color-blue-100: #066DCA;
+  --color-blue-dark: #0059B6;
+}

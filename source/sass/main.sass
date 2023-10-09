@@ -1,0 +1,1429 @@
+@import "./variables.sass"
+
+/* BASE STYLE SETTINGS START: */
+
+*
+	padding: 0px
+	margin: 0px
+	box-sizing: border-box
+
+html
+	overflow-x: hidden
+
+body
+	font-family: var(--font-family-primary)
+	scroll-behavior: smooth
+	-webkit-font-smoothing: antialiased
+
+@mixin element_animation
+	transition-timing-function: ease-in-out
+	transition-duration: 0.3s
+
+/* BASE STYLE SETTINGS END. */
+
+
+
+/* WRAPPER STYLE SETTINGS START: */
+
+.wrapper-full
+	width: 100%
+	margin: 0px auto
+	padding: 0px 0px
+
+.wrapper-fix
+	width: 100%
+	max-width: 1240px
+	margin: 0px auto
+	padding: 0px 20px
+
+/* WRAPPER STYLE SETTINGS END. */
+
+
+
+/* UI STYLE SETTINGS START: */
+
+/* Buttons style settings start: */
+
+.button
+	display: inline-block
+	text-decoration: none
+	font-weight: 400
+	border-radius: 10px
+	transition-duration: 0.2s
+
+	&:focus
+		outline: 1px solid var(--color-grey-80)
+
+	&__middle
+		height: 50px
+		font-size: 16px
+		line-height: 20px
+		padding: 15.5px 20px
+
+	&__small
+		height: 44px
+		font-size: 14px
+		line-height: 18px
+		padding: 12.5px 20px
+
+	&__blue
+		color: var(--font-white)
+		background-color: var(--bt-blue)
+
+		&:hover
+			background-color: var(--color-blue-dark)
+
+	&__gray
+		color: var(--font-dark-grey)
+		background-color: var(--bg-ultra-light-grey)
+
+		&:hover
+			color: var(--color-grey-dark)
+
+	&__combined
+		color: var(--font-blue)
+		background-color: var(--bt-light-blue)
+
+		display: inline-flex
+		align-items: center
+		column-gap: 5px
+		padding: 9.5px 15px
+
+		.img-svg
+			path:not([stroke-linecap])
+				stroke: var(--bt-blue)
+
+		&:hover
+			color: var(--color-blue-dark)
+
+			.img-svg
+				path:not([stroke-linecap])
+					stroke: var(--color-blue-dark)
+			
+	&__icon
+		background-color: var(--bg-ultra-light-grey)
+
+		display: flex
+		justify-content: center
+		align-items: center
+		padding: 13px 24px
+
+/* Buttons style settings end. */
+
+
+/* Titles style settings start: */
+
+.headline
+	font-weight: 400
+	color: var(--font-dark-grey)
+	text-transform: uppercase
+
+	background-color: var(--bg-light-grey)
+	border-radius: 10px
+
+	&__middle
+		font-size: 16px
+		line-height: 20px
+		padding: 15px 15px
+
+	&__small
+		font-size: 14px
+		line-height: 18px
+		padding: 11px 15px
+
+/* Titles style settings end. */
+
+
+/* Slider navigation style settings start: */
+
+.slider-navigation
+	display: flex
+	flex-direction: row
+	align-items: center
+	column-gap: 10px
+
+	span
+		width: 50px
+		height: 50px
+		cursor: pointer
+		transition-duration: 0.2s
+
+		&.prev
+			transform: rotate(180deg)
+
+		&.next
+			transform: rotate(0deg)
+
+		.img-svg 
+			path
+				stroke: var(--bt-blue)
+
+		&:hover
+			.img-svg 
+				path
+					stroke: var(--color-blue-dark)
+
+/* Slider navigation style settings end. */
+
+
+
+/* Page pagination style settings start: */
+
+.page-pagination
+	display: flex
+	align-items: center
+	column-gap: 10px
+
+	.arrow
+		width: 30px
+		height: 30px
+		display: flex
+		justify-content: center
+		align-items: center
+		text-decoration: none
+		
+		border-radius: 4px
+
+		cursor: pointer
+		transition-duration: 0.3s
+
+		&:focus
+			outline: 1px solid var(--color-grey-80)
+
+		&:hover
+			background-color: var(--font-white)
+
+			.img-svg
+				path
+					stroke: var(--bt-blue)
+
+		&.disable
+			.img-svg
+				path
+					stroke: var(--color-grey-40)
+
+			&:hover
+				.img-svg
+					path
+						stroke: var(--color-grey-40)
+
+		&.prev
+			transform: rotate(180deg)
+
+		&.next
+			transform: rotate(0deg)
+
+	.pages
+		display: flex
+		column-gap: 10px
+
+		.page
+			width: 30px
+			height: 30px
+			display: flex
+			justify-content: center
+			align-items: center
+			text-decoration: none
+
+			border-radius: 4px
+			background-color: var(--font-white)
+
+			transition-duration: 0.2s
+			cursor: pointer
+
+			&:focus
+				outline: 1px solid var(--color-grey-80)
+
+			&.active
+				background-color: var(--elements-light-blue)
+
+			span
+				font-size: 14px
+				line-height: 18px
+				font-weight: 400
+				color: var(--font-dark-grey)
+
+/* Page pagination style settings end. */
+
+
+/* Input's style settings start: */
+
+.input-block
+	display: flex
+	flex-direction: column
+	row-gap: 5px
+
+	p, span
+		font-size: 14px
+		line-height: 18px
+		font-weight: 400
+		color: var(--font-dark-grey)
+
+	input
+		width: 100%
+		height: 50px
+
+		font-size: 16px
+		line-height: 20px
+		font-weight: 400
+		color: var(--font-medium-grey)
+
+		border: none
+
+		border-radius: 10px
+		background-color: var(--bg-ultra-light-grey)
+		padding: 15px 15px
+
+		transition-duration: 0.2s
+
+		&:placeholder
+			font-size: 16px
+			line-height: 20px
+			font-weight: 400
+			color: var(--font-medium-grey)
+
+		&:focus
+			outline: 1px solid var(--color-grey-80)
+
+/* Input's style settings end. */
+
+/* UI STYLE SETTINGS END. */
+
+
+
+/* MODAL STYLE SETTINGS START: */
+
+.section-modal
+	width: 100%
+	max-width: 800px
+	margin: 0px auto
+
+	.container-modal
+		display: flex
+		flex-direction: column
+		row-gap: 10px
+
+		border-radius: 10px
+		background-color: var(--bg-white)
+
+		padding: 10px 10px
+
+		.head-modal
+			display: flex
+			flex-direction: row
+			align-items: center
+			justify-content: space-between
+			column-gap: 10px
+
+			border-radius: 10px
+			background-color: var(--bg-light-grey)
+			padding: 10px 10px
+
+			p
+				height: 50px
+				display: flex
+				align-items: center
+				flex: 1
+
+				font-size: 16px
+				line-height: 20px
+				font-weight: 400
+				color: var(--font-dark-grey)
+				text-transform: uppercase
+
+				border-radius: 10px
+				background-color: var(--bg-ultra-light-grey)
+
+				padding: 0px 15px
+
+			& > div
+				width: 50px
+				height: 50px
+				display: flex
+				justify-content: center
+				align-items: center
+
+				border-radius: 10px
+				background-color: var(--bg-ultra-light-grey)
+
+				transition-duration: 0.2s
+				cursor: pointer
+
+				&:hover
+					outline: 1px solid var(--color-grey-80)
+
+/* MODAL STYLE SETTINGS END. */
+
+
+
+/* HEADER STYLE SETTINGS START: */
+
+.section-header
+	margin: 5px 0px 10px 0px
+
+.container-header
+	display: flex
+	flex-direction: column
+	row-gap: 5px
+
+	.container-header__row-01, 
+	.container-header__row-02
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		gap: 5px
+
+.container-header__row-01
+	.header-logotype
+		display: flex
+		justify-content: flex-start
+		align-items: center
+		column-gap: 5px
+		text-decoration: none
+		background-color: var(--bg-ultra-light-grey)
+		border-radius: 10px
+		padding: 8px 15px
+		flex: 1
+
+		transition-duration: 0.2s
+
+		&:hover
+			color: var(--color-grey-dark)
+
+		&:focus
+			outline: 1px solid var(--color-grey-80)
+
+		span
+			font-size: 16px
+			font-weight: 400
+			color: var(--font-dark-grey)
+
+	.header-menu
+		ul
+			display: flex
+			align-items: center
+			column-gap: 5px
+			list-style-type: none
+
+			li
+				a
+					font-size: 16px
+					font-weight: 400
+					color: var(--font-dark-grey)
+					text-decoration: none
+
+					background-color: var(--bg-ultra-light-grey)
+					border-radius: 10px
+					padding: 15.5px 20px
+
+					transition-duration: 0.2s
+
+					&:hover
+						color: var(--color-grey-dark)
+
+					&:focus
+						outline: 1px solid var(--color-grey-80)
+
+.container-header__row-02
+	.header-search
+		flex: 1
+
+		.header-search__input
+			width: 100%
+			background-color: var(--bg-ultra-light-grey)
+
+			font-size: 16px
+			font-weight: 400
+			color: var(--font-medium-grey)
+
+			background-image: url('../media/icons/icon_search.svg')
+			background-repeat: no-repeat
+			background-position: right 10px center
+			background-size: 24px
+
+			border: none
+			border-radius: 10px
+			background-color: var(--bg-ultra-light-grey)
+			padding: 16px 15px
+
+			transition: 0.2s
+
+			&::placeholder
+				font-size: 16px
+				font-weight: 400
+				color: var(--font-medium-grey)
+
+			&:focus
+				outline: 1px solid var(--color-grey-80)
+
+	.header-phone
+		font-size: 16px
+		font-weight: 400
+		color: var(--font-dark-grey)
+		text-decoration: none
+
+		background-color: var(--bg-ultra-light-grey)
+		border-radius: 10px
+		padding: 15.5px 15px
+
+		&:hover
+			color: var(--color-grey-dark)
+			
+		&:focus
+			outline: 1px solid var(--color-grey-80)
+
+.custom-select
+	.custom-select-container 
+		&.customSelect
+			width: 180px
+			height: 50px
+			position: relative
+			@include element_animation
+
+			&.is-open
+				.custom-select-opener
+					&::after
+						transform: rotate(180deg)
+						top: 25%
+						right: 15px
+
+				.custom-select-panel
+					max-height: none
+					display: block
+
+			.custom-select-opener
+				background-color: var(--bg-ultra-light-grey)
+				border-radius: 10px
+				border: none
+
+				list-style: none
+				cursor: pointer
+				padding: 15.5px 15px
+
+				&:focus
+					outline: 1px solid var(--color-grey-80)
+
+				&::after
+					content: ''
+					position: absolute
+					width: 15px
+					height: 15px
+					right: 15px
+					top: 45%
+					background-image: url('../media/icons/icon_grey_chevron.svg')
+					background-repeat: no-repeat
+					background-size: contain
+					transform: rotate(0deg)
+
+				span
+					font-family: var(--font-family-primary)
+					font-size: 16px
+					color: var(--font-medium-grey)
+
+			.custom-select-panel
+				width: 100%
+				display: none
+				overflow: hidden
+				
+				position: absolute
+				top: calc(100% + 15px)
+				left: 0
+				z-index: 100
+
+				list-style-type: none
+				border-radius: 10px
+				background-color: var(--bg-ultra-light-grey)
+				box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1)
+				border: none
+
+				padding: 0px 0px
+
+				.custom-select-option
+					position: relative
+
+					font-family: var(--font-family-primary)
+					font-size: 14px
+					color: var(--font-medium-grey)
+
+					cursor: pointer
+					border-bottom: 1px solid var(--color-grey-20)
+					padding: 12px 15px
+
+					@include element_animation
+
+					&:hover, &.has-focus
+						background-color: var(--bg-ultra-light-grey)
+						color: var(--font-medium-grey)
+
+					&:last-child
+						border: none
+
+					&.is-selected::before
+						content: ''
+						position: absolute
+						width: 16px
+						height: 16px
+						right: 0px
+						top: 35%
+
+						// background-image: url('../media/icons/icon_orange_check.svg')
+						// background-repeat: no-repeat
+						// background-size: contain
+						// padding: 0px 0px
+
+.custom-select.header-select
+	.custom-select-container 
+		&.customSelect
+			width: 256px
+
+/* HEADER STYLE SETTINGS END. */
+
+
+
+/* HEADER SLIDER STYLE SETTINGS START: */
+
+.container-slider
+	.header-slider
+		width: 100%
+		height: 560px
+		position: relative
+
+		.header-slider__item
+			width: 100%
+			height: 560px
+
+			img
+				width: 100%
+				height: 100%
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+				object-fit: cover
+
+	.owl-dots
+		display: inline-flex
+		column-gap: 5px
+		position: relative
+		bottom: 50px
+		left: 50%
+		transform: translateX(-50%)
+
+		border-radius: 10px
+		background-color: var(--bg-white)
+		padding: 5px 5px
+
+		.owl-dot
+			span
+				background-color: var(--bg-white)
+				border: 1.2px solid var(--color-blue-100)
+				margin: 0px 0px
+
+			&.active, &:hover
+				span
+					background-color: var(--color-blue-100)
+
+/* HEADER SLIDER STYLE SETTINGS END. */
+
+
+
+/* AREAS STYLE SETTINGS START: */
+
+.section-areas
+	margin: 20px 0px
+
+	.container-areas
+		display: flex
+		flex-direction: column
+		row-gap: 10px
+
+		.container-areas__row-02
+			.container-areas__links
+				width: 100%
+				display: grid
+				grid-template-columns: repeat(3, 1fr)
+				grid-auto-rows: 220px
+				gap: 15px
+
+				.link
+					display: flex
+					flex-direction: column
+					justify-content: space-between
+
+					text-decoration: none
+
+					border-radius: 10px
+					background-color: var(--bg-ultra-light-grey)
+					padding: 15px 15px
+
+					&:hover
+						text-decoration: underline
+
+					p
+						font-size: 16px
+						font-weight: 400
+						color: var(--font-dark-grey)
+
+					div
+						display: flex
+						justify-content: flex-end
+
+		.container-areas__row-03
+			.button
+				width: 100%
+				justify-content: space-between
+		
+/* AREAS STYLE SETTINGS END. */
+
+
+
+/* DOCTORS STYLE SETTINGS START: */
+
+.section-doctors
+	margin: 20px 0px
+
+	.container-doctors
+		display: flex
+		flex-direction: column
+		row-gap: 10px
+
+		.container-doctors__row-03
+			display: flex
+			column-gap: 20px
+			align-items: center
+
+			.button
+				width: 100%
+				justify-content: space-between
+
+.doctor__item
+	display: flex
+	flex-direction: column
+	row-gap: 15px
+
+	border-radius: 10px
+	background-color: var(--bg-ultra-light-grey)
+
+	padding: 10px 10px
+
+	.head
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+
+		.image
+			width: 111px
+			height: 111px
+			position: relative
+
+			img
+				width: 100%
+				height: 100%
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+				object-fit: cover
+
+		.time-list
+			display: flex
+			flex-direction: column
+			row-gap: 5px
+
+			.time
+				width: 95px
+				height: 24px
+				display: inline-flex
+				align-items: center
+				justify-content: center
+
+				font-size: 12px
+				line-height: 14px
+				font-weight: 600
+				color: var(--font-white)
+				text-decoration: none
+
+				border-radius: 5px
+				background-color: var(--bt-blue)
+
+				transition-duration: 0.3s
+
+				&:hover
+					background-color: var(--color-blue-dark)
+
+				img
+					max-width: 22px
+
+	.body
+		display: flex
+		flex-direction: column
+		row-gap: 10px
+
+		p
+			font-size: 14px
+			line-height: 16px
+			font-weight: 400
+			color: var(--font-medium-grey)
+
+			&.name
+				font-size: 16px
+				line-height: 20px
+				color: var(--font-dark-grey)
+
+	.footer
+		display: flex
+		column-gap: 5px
+		align-items: center
+
+		span
+			font-size: 16px
+			line-height: 20px
+			color: var(--font-dark-grey)
+
+			&.price-previous
+				opacity: 0.6
+				text-decoration: line-through
+
+/* DOCTORS STYLE SETTINGS END. */
+
+
+
+/* ABOUT STYLE SETTINGS START: */
+
+.section-about
+	margin: 20px 0px
+
+	.container-about
+		display: flex
+		flex-direction: column
+		row-gap: 10px
+
+		.container-about__row-02
+			display: flex
+			flex-direction: row
+			column-gap: 10px
+
+			.container-about__column-01
+				width: 50%
+				display: flex
+				flex-direction: column
+				row-gap: 10px
+
+				& > div
+					display: flex
+					flex-direction: column
+					justify-content: space-between
+
+					border-radius: 10px
+					background-color: var(--bg-ultra-light-grey)
+					padding: 15px 15px 30px 15px
+
+					&:first-child
+						height: 270px
+
+					&:last-child
+						height: 290px
+
+					p
+						max-width: 260px
+
+						font-size: 16px
+						line-height: 20px
+						font-weight: 400
+						color: var(--font-dark-grey)
+
+				.numbers
+					display: grid
+					grid-template-columns: repeat(3, 1fr)
+					column-gap: 25px
+
+					div
+						display: flex
+						flex-direction: column
+						row-gap: 10px
+
+						span
+							font-size: 32px
+							line-height: 40px
+							font-weight: 400
+							color: var(--font-blue)
+
+						p
+							font-size: 14px
+							line-height: 18px
+							font-weight: 400
+							color: var(--font-medium-grey)
+							text-transform: uppercase
+
+			.container-about__column-02
+				width: 50%
+				display: flex
+				flex-direction: column
+				row-gap: 10px
+
+				& > div
+					height: calc(100% / 5)
+					display: flex
+					align-items: center
+
+					border-radius: 10px
+					background-color: var(--bg-ultra-light-grey)
+					padding: 15px 30px
+
+					p
+						font-size: 16px
+						line-height: 20px
+						font-weight: 400
+						color: var(--font-dark-grey)
+
+/* ABOUT STYLE SETTINGS END. */
+
+
+
+/* CONTACTS STYLE SETTINGS START: */
+
+.section-contacts
+	.container-contacts
+		display: flex
+		flex-direction: column
+		row-gap: 10px
+
+		.container-contacts__row-02
+			width: 100%
+			height: 540px
+			display: flex
+			column-gap: 20px
+
+			border-radius: 10px
+			background-color: var(--bt-ultra-light-grey)
+
+			padding: 15px 15px
+
+			.container-contacts__column-01
+				width: calc(50% + 15px)
+				overflow-y: auto
+
+				&::-webkit-scrollbar
+					width: 10px
+
+					border-radius: 10px
+					background-color: var(--elements-white)
+
+				&::-webkit-scrollbar-thumb
+					border-radius: 10px
+					background: var(--elements-light-blue)
+
+				&::-webkit-scrollbar-corner
+					background-color: var(--elements-white)
+
+			.container-contacts__column-02
+				width: calc(50% - 15px)
+
+				.map
+					width: 100%
+					height: 100%
+					border-radius: 10px
+					background-color: var(--elements-white)
+
+		.container-contacts__row-03
+			.button
+				width: 100%
+				justify-content: space-between
+
+.addres-list
+	display: flex
+	flex-direction: column
+	row-gap: 20px
+	padding: 0px 15px 0px 0px
+
+	.addres-item
+		border-radius: 10px
+		background-color: var(--elements-white)
+		padding: 20px 20px
+
+		.head
+			margin: 0px 0px 20px 0px
+
+			h3
+				font-size: 16px
+				line-height: 20px
+				font-weight: 400
+				color: var(--font-medium-grey)
+				text-transform: uppercase
+
+		.body
+			display: flex
+			flex-direction: column
+			row-gap: 10px
+
+			p, a
+				max-width: 290px
+
+				font-size: 16px
+				line-height: 20px
+				font-weight: 400
+				color: var(--font-medium-grey)
+				text-decoration: none
+
+/* CONTACTS STYLE SETTINGS END. */
+
+
+
+/* FOOTER STYLE SETTINGS START: */
+
+.section-footer
+	margin: 20px 0px
+
+	.container-footer
+		display: flex
+		flex-direction: column
+		row-gap: 10px
+
+		.container-footer__row-01
+			display: flex
+			border-radius: 10px
+			background-color: var(--bg-light-grey)
+
+			padding: 15px 15px 40px 15px
+
+			.container-footer__column-01
+				width: 50%
+				display: flex
+				flex-direction: column
+				align-items: flex-start
+				justify-content: space-between
+
+			.container-footer__column-02
+				width: 50%
+				display: flex
+				flex-direction: column
+				align-items: flex-start
+				justify-content: space-between
+				row-gap: 65px
+
+				span
+					font-size: 16px
+					line-height: 20px
+					font-weight: 400
+					color: var(--font-dark-grey)
+
+				p
+					margin: 20px 0px 0px 0px
+					a
+						font-size: 64px
+						line-height: 80px
+						font-weight: 400
+						color: var(--font-dark-grey)
+						text-decoration: none
+
+		.container-footer__row-02
+			display: flex
+			align-items: center
+			padding: 80px 15px 15px 15px
+
+			border-radius: 10px
+			background-color: var(--bg-light-grey)
+
+			div
+				&:first-child
+					width: 50%
+
+				&:last-child
+					width: 50%
+					display: flex
+					justify-content: space-between
+					align-items: center
+
+			a, span
+				font-size: 14px
+				line-height: 16px
+				font-weight: 400
+				color: var(--font-dark-grey)
+				text-decoration: none
+
+.footer__social-media
+	display: flex
+	column-gap: 10px
+
+	a
+		text-decoration: none
+
+.footer__menu
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+
+	ul
+		display: flex
+		flex-direction: column
+		list-style-type: none
+
+		li
+			a
+				display: inline-block
+				font-size: 16px
+				line-height: 20px
+				font-weight: 400
+				color: var(--font-dark-grey)
+				text-decoration: none
+				padding: 15px 0px
+
+/* FOOTER STYLE SETTINGS END. */
+
+
+
+/* DOCTOR PAGE STYLE SETTINGS START: */
+
+.section-doctor
+	.container-doctor
+		display: flex
+		flex-direction: column
+		row-gap: 10px
+
+	.container-doctor__row-02
+		display: flex
+		column-gap: 10px
+
+		.container-doctor__column-01
+			width: 50%
+			display: flex
+			flex-direction: column
+			row-gap: 10px
+
+		.container-doctor__column-02
+			width: 50%
+			display: flex
+			flex-direction: column
+			row-gap: 10px
+
+.doctor-photo__desktop
+	width: 100%
+	height: 580px
+	position: relative
+
+	img
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		object-fit: cover
+
+		border-radius: 10px
+
+.doctor-photo__mobile
+	display: none
+
+.doctor-info
+	display: flex
+	flex-direction: column
+	row-gap: 20px
+
+	border-radius: 10px
+	background-color: var(--bg-ultra-light-grey)
+	padding: 30px 30px
+
+	p
+		max-width: 300px
+
+		font-size: 16px
+		line-height: 20px
+		font-weight: 400
+		color: var(--font-dark-grey)
+
+		&.uppercase
+			text-transform: uppercase
+
+	div
+		display: flex
+		flex-direction: column
+		row-gap: 10px
+
+		p
+			font-size: 14px
+			line-height: 18px
+			color: var(--font-medium-grey)
+
+	span
+		&.previous
+			font-size: 14px
+			line-height: 18px
+			text-decoration: line-through
+			color: var(--font-grey)
+			padding: 0px 5px
+
+.doctor-calendar
+	height: 100%
+	border-radius: 10px
+	background-color: var(--bg-ultra-light-grey)
+
+	.head
+		padding: 30px 30px
+
+		p
+			font-size: 16px
+			line-height: 20px
+			font-weight: 400
+			color: var(--font-dark-grey)
+			text-transform: uppercase
+
+	.body
+		padding: 0px 20px 30px 20px
+
+.doctor-about
+	display: flex
+	flex-direction: column
+	row-gap: 15px
+
+	border-radius: 10px
+	background-color: var(--bg-ultra-light-grey)
+	padding: 15px 15px
+
+	.doctor-about__tab
+		display: flex
+		flex-direction: column
+
+		.head
+			display: flex
+			align-items: center
+			justify-content: space-between
+
+			border-radius: 10px
+			background-color: var(--bg-light-grey)
+			padding: 10px 15px
+
+			cursor: pointer
+
+			p
+				font-size: 16px
+				line-height: 20px
+				font-weight: 400
+				color: var(--font-dark-grey)
+				text-transform: uppercase
+
+			img
+				transform: rotate(0deg)
+				transition: 0.3s
+
+		.body
+			height: 0px
+			overflow: hidden
+
+			display: flex
+			flex-direction: column
+			row-gap: 10px
+
+			padding: 0px 15px
+
+			p
+				font-size: 16px
+				line-height: 20px
+				font-weight: 400
+				color: var(--font-dark-grey)
+
+		&.active
+			.head
+				img
+					transform: rotate(180deg)
+
+			.body
+				height: auto
+				margin: 15px 0px 0px 0px
+
+/* DOCTOR PAGE STYLE SETTINGS END. */
+
+
+
+/* DOCTOR MODAL STYLE SETTINGS START: */
+
+.section-modal__doctor
+	.container-modal__doctor
+		.body-modal
+			display: flex
+			flex-direction: column
+			row-gap: 10px
+
+			.body-modal_row-01
+				display: flex
+				flex-direction: row
+				column-gap: 10px
+
+				.doctor-info
+					width: calc(100% - 315px)
+					padding: 20px 10px
+
+				.doctor-photo__desktop
+					width: 300px
+					height: 300px
+
+			.body-modal_row-02
+				display: flex
+				flex-direction: row
+				column-gap: 10px
+
+				.custom-form__doctor-form
+					width: calc(100% - 315px)
+					display: flex
+					flex-direction: column
+					row-gap: 10px
+
+					.custom-form__body
+						display: flex
+						flex-direction: column
+						row-gap: 20px
+
+						border-radius: 10px
+						background-color: var(--bg-light-grey)
+
+						padding: 20px 10px
+
+					.custom-form__footer
+						.button
+							width: 100%
+							border: none
+							outline: none
+
+							cursor: pointer
+							transition-duration: 0.2s
+
+							&:focus
+								outline: 1px solid var(--color-grey-80)
+
+					.custom-select.doctor-select
+						.custom-select-container 
+							&.customSelect
+								width: 100%
+
+				.doctor-calendar
+					width: 300px
+					height: 100%
+
+					border-radius: 10px
+					background-color: var(--bg-ultra-light-grey)
+
+					padding: 20px 5px
+
+/* DOCTOR MODAL STYLE SETTINGS END. */
+
+
+
+/* CATALOG PAGE STYLE SETTINGS START: */
+
+.section-catalog
+	.container-catalog
+		display: flex
+		flex-direction: column
+		row-gap: 10px
+
+		.container-catalog__row-02
+			display: grid
+			grid-template-columns: repeat(4, 1fr)
+			gap: 10px
+
+			.custom-select
+				.custom-select-container 
+					&.customSelect
+						width: 100%
+
+
+			.catalog-search
+				.catalog-search__input
+					width: 100%
+					background-color: var(--bg-ultra-light-grey)
+
+					font-size: 16px
+					font-weight: 400
+					color: var(--font-medium-grey)
+
+					background-image: url('../media/icons/icon_search.svg')
+					background-repeat: no-repeat
+					background-position: right 10px center
+					background-size: 24px
+
+					border: none
+					border-radius: 10px
+					background-color: var(--bg-ultra-light-grey)
+					padding: 16px 15px
+
+					transition: 0.2s
+
+					&::placeholder
+						font-size: 16px
+						font-weight: 400
+						color: var(--font-medium-grey)
+
+					&:focus
+						outline: 1px solid var(--color-grey-80)
+
+		.container-catalog__row-03
+			display: grid
+			grid-template-columns: repeat(4, 1fr)
+			column-gap: 10px
+			row-gap: 20px
+
+			margin: 10px 0px 10px 0px
+
+		.container-catalog__row-04
+			display: flex
+			justify-content: flex-end
+			align-items: center
+
+			border-radius: 10px
+			background-color: var(--bg-ultra-light-grey)
+			padding: 20px 10px
+
+/* CATALOG PAGE STYLE SETTINGS END. */
+
+
+
+/* DIRECTIONS PAGE STYLE SETTINGS START: */
+
+.section-directions
+	.container-directions
+		display: flex
+		flex-direction: column
+		row-gap: 10px
+
+		.container-directions__row-02
+			display: flex
+			flex-direction: column
+			row-gap: 5px
+
+			.container-directions__item
+				display: flex
+				flex-direction: column
+				row-gap: 10px
+
+				border-radius: 10px
+				background-color: var(--bg-ultra-light-grey)
+
+				padding: 30px 15px
+
+				.head
+					p
+						font-size: 16px
+						line-height: 20px
+						font-weight: 600
+						color: var(--font-dark-grey)
+						text-transform: uppercase
+
+				.body
+					display: grid
+					grid-template-columns: repeat(4, 1fr)
+					gap: 10px
+
+					p, a
+						font-size: 16px
+						line-height: 20px
+						font-weight: 400
+						color: var(--font-dark-grey)
+						text-decoration: none
+
+					a
+						&:hover
+							text-decoration: underline
+
+/* DIRECTIONS PAGE STYLE SETTINGS END. */
+
+
