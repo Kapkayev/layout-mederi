@@ -544,6 +544,7 @@ body {
 .container-slider .header-slider .header-slider__item {
   width: 100%;
   height: 560px;
+  border-radius: 10px;
 }
 .container-slider .header-slider .header-slider__item img {
   width: 100%;
@@ -551,6 +552,7 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
+  border-radius: 10px;
   transform: translate(-50%, -50%);
   object-fit: cover;
 }
@@ -1298,3 +1300,165 @@ body {
 }
 
 /* DIRECTIONS PAGE STYLE SETTINGS END. */
+/* ABOUT PAGE STYLE SETTINGS START: */
+.section-caption {
+  margin: 10px 0px 20px 0px;
+}
+.section-caption .container-caption {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.section-caption .container-caption .container-caption__row-02 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 30px;
+  border-radius: 10px;
+  background-color: var(--bg-ultra-light-grey);
+  padding: 75px 15px;
+}
+.section-caption .container-caption .container-caption__row-02 h4 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 400;
+  color: var(--font-dark-grey);
+  text-align: center;
+}
+.section-caption .container-caption .container-caption__row-02 p {
+  max-width: 490px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--font-dark-grey);
+  text-align: center;
+}
+.section-caption .container-caption .container-caption__row-03 {
+  display: flex;
+  column-gap: 10px;
+}
+.section-caption .container-caption .container-caption__row-03 .container-caption__column-01 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: var(--bg-ultra-light-grey);
+  padding: 15px 15px;
+}
+.section-caption .container-caption .container-caption__row-03 .container-caption__column-01 p {
+  max-width: 480px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--font-dark-grey);
+}
+.section-caption .container-caption .container-caption__row-03 .container-caption__column-01 p.uppercase {
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+.section-caption .container-caption .container-caption__row-03 .container-caption__column-02 {
+  width: 50%;
+  height: 600px;
+  position: relative;
+  border-radius: 10px;
+}
+.section-caption .container-caption .container-caption__row-03 .container-caption__column-02 img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+/* ABOUT PAGE STYLE SETTINGS END. */
+/* PRICE PAGE STYLE SETTINGS START: */
+.section-price {
+  margin: 10px 0px 20px 0px;
+}
+.section-price .container-price {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.section-price .container-price .container-price__row-02 {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.price-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.price-list .price-list__tab {
+  border-radius: 10px;
+  background-color: var(--bg-ultra-light-grey);
+}
+.price-list .price-list__tab.active .head span {
+  background-image: url("../media/icons/icon_minus.svg");
+}
+.price-list .price-list__tab.active .body {
+  height: auto;
+  padding-top: 10px;
+}
+.price-list .price-list__tab .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px;
+  cursor: pointer;
+}
+.price-list .price-list__tab .head p {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--font-dark-grey);
+}
+.price-list .price-list__tab .head span {
+  width: 32px;
+  height: 32px;
+  display: block;
+  background-image: url("../media/icons/icon_plus.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+}
+.price-list .price-list__tab .body {
+  height: 0px;
+  overflow: hidden;
+  padding: 0px 15px 0px 15px;
+}
+.price-list .price-list__tab .body .row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--elements-light-grey);
+  padding: 16px 0px;
+}
+.price-list .price-list__tab .body .row:last-child {
+  border-bottom: none;
+}
+.price-list .price-list__tab .body .row p {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--font-dark-grey);
+}
+.price-list .price-list__tab .body .row p:first-child {
+  flex: 1;
+}
+.price-list .price-list__tab .body .row p:last-child {
+  width: 100px;
+  text-align: right;
+}
+
+/* PRICE PAGE STYLE SETTINGS END. */

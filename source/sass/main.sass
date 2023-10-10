@@ -592,6 +592,7 @@ body
 		.header-slider__item
 			width: 100%
 			height: 560px
+			border-radius: 10px
 
 			img
 				width: 100%
@@ -599,6 +600,7 @@ body
 				position: absolute
 				left: 50%
 				top: 50%
+				border-radius: 10px
 				transform: translate(-50%, -50%)
 				object-fit: cover
 
@@ -1427,3 +1429,180 @@ body
 /* DIRECTIONS PAGE STYLE SETTINGS END. */
 
 
+
+/* ABOUT PAGE STYLE SETTINGS START: */
+
+.section-caption
+	margin: 10px 0px 20px 0px
+
+	.container-caption
+		display: flex
+		flex-direction: column
+		row-gap: 10px
+
+		.container-caption__row-02
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			row-gap: 30px
+
+			border-radius: 10px
+			background-color: var(--bg-ultra-light-grey)
+			padding: 75px 15px
+
+			h4
+				font-size: 32px
+				line-height: 40px
+				font-weight: 400
+				color: var(--font-dark-grey)
+				text-align: center
+
+			p
+				max-width: 490px
+
+				font-size: 16px
+				line-height: 20px
+				font-weight: 400
+				color: var(--font-dark-grey)
+				text-align: center
+
+		.container-caption__row-03
+			display: flex
+			column-gap: 10px
+
+			.container-caption__column-01
+				width: 50%
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+
+				border-radius: 10px
+				background-color: var(--bg-ultra-light-grey)
+				padding: 15px 15px
+
+				p
+					max-width: 480px
+
+					font-size: 16px
+					line-height: 20px
+					font-weight: 400
+					color: var(--font-dark-grey)
+
+					&.uppercase
+						font-size: 14px
+						line-height: 18px
+						text-transform: uppercase
+
+			.container-caption__column-02
+				width: 50%
+				height: 600px
+
+				position: relative
+				border-radius: 10px
+
+				img
+					width: 100%
+					height: 100%
+					position: absolute
+					left: 50%
+					top: 50%
+					border-radius: 10px
+					transform: translate(-50%, -50%)
+					object-fit: cover
+
+/* ABOUT PAGE STYLE SETTINGS END. */
+
+
+
+/* PRICE PAGE STYLE SETTINGS START: */
+
+.section-price
+	margin: 10px 0px 20px 0px
+
+	.container-price
+		display: flex
+		flex-direction: column
+		row-gap: 10px
+
+		.container-price__row-02
+			display: flex
+			flex-direction: column
+			row-gap: 5px
+
+.price-list
+	display: flex
+	flex-direction: column
+	row-gap: 5px
+
+	.price-list__tab
+		border-radius: 10px
+		background-color: var(--bg-ultra-light-grey)
+
+		&.active
+			.head
+				span
+					background-image: url('../media/icons/icon_minus.svg')
+
+			.body
+				height: auto
+				padding-top: 10px
+
+		.head
+			display: flex
+			justify-content: space-between
+			align-items: center
+
+			padding: 15px 15px
+
+			cursor: pointer
+
+			p
+				font-size: 16px
+				line-height: 20px
+				font-weight: 400
+				color: var(--font-dark-grey)
+
+			span
+				width: 32px
+				height: 32px
+				display: block
+
+				background-image: url('../media/icons/icon_plus.svg')
+				background-repeat: no-repeat
+				background-size: contain
+				background-position: center
+
+				cursor: pointer
+
+		.body
+			height: 0px
+			overflow: hidden
+
+			padding: 0px 15px 0px 15px
+
+			.row
+				width: 100%
+				display: flex
+				justify-content: space-between
+				align-items: flex-start
+
+				border-bottom: 1px solid var(--elements-light-grey)
+				padding: 16px 0px
+
+				&:last-child
+					border-bottom: none
+
+				p
+					font-size: 16px
+					line-height: 20px
+					font-weight: 400
+					color: var(--font-dark-grey)
+
+					&:first-child
+						flex: 1
+					&:last-child
+						width: 100px
+						text-align: right
+
+/* PRICE PAGE STYLE SETTINGS END. */
