@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Mederi Health - Главная</title>
+	<title>Mederi Health - Страница врача</title>
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +20,725 @@
 	<link rel="stylesheet"  href="css/media.css">
 </head>
 <body>
+
+<div class="section-modal section-modal__doctor mfp-hide" id="doctor-form">
+	<div class="container-modal container-modal__doctor">
+		<div class="head-modal">
+			<p>ЗАПИСАТЬСЯ НА ПРИЁМ</p>
+			<div>
+				<img src="media/icons/icon_grey_cross.svg" alt="" class="close-modal">
+			</div>
+		</div>
+		<div class="body-modal">
+			<div class="body-modal_row-01">
+				<div class="doctor-info">
+					<p>Иванов Иван Иванович</p>
+					<div>
+						<p class="uppercase">ГАСТРОЭНТЕРОЛОГ, ГЕПАТОЛОГ, ИНФЕКЦИОНИСТ, ПАРАЗИТОЛОГ</p>
+						<p>Врач высшей категории</p>
+						<p>Стаж 17 лет</p>
+					</div>
+					<p>
+						Стоимость приёма: 
+						<span class="previous">8.000 ₸</span>
+						<span>5.000 ₸</span>
+					</p>
+					<div>
+						<p>ул. Розыбакиева, 218а (выше Тимирязева), Бостандыкский район, Алматы</p>
+						<p>Станция метро: Сайран (1.9 км)</p>
+					</div>
+				</div>
+				<div class="doctor-photo__desktop">
+					<img src="media/photo.png" alt="">
+				</div>
+			</div>
+			<div class="body-modal_row-02">
+				<form class="custom-form custom-form__doctor-form">
+					<div class="custom-form__body">
+						<div class="custom-select doctor-select">
+							<select id="doctor-select">
+								<option value="0">Специальность / процедура</option>
+								<option value="1">Процедура 01</option>
+								<option value="1">Процедура 02</option>
+								<option value="1">Процедура 03</option>
+							</select>
+						</div>
+						<div class="input-block date-picker">
+							<p>Дата и время приема</p>
+							<input type="text" name="data">
+						</div>
+						<div class="doctor-calendar-mobile">
+							<div class="body">
+								<span class="navigation-button prev" id="prev__calendar-mobile-slider">
+									<img src="media/icons/icon_arrow_calendar.svg" alt="" class="img-svg">
+								</span>
+								<div class="calendar calendar-mobile-slider owl-carousel owl-theme">
+									<div class="day">
+										<div class="head">
+											<p>Сегодня</p>
+											<p>23 апр.</p>
+										</div>
+										<div class="body">
+											<div class="time-list">
+												<a href="#" class="time active">
+													<span>08:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>09:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>10:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>11:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>12:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>13:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>14:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>15:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>16:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>17:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>18:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>19:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>20:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>21:00</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="day">
+										<div class="head">
+											<p>Завтра</p>
+											<p>24 апр.</p>
+										</div>
+										<div class="body">
+											<div class="time-list">
+												<a href="#" class="time active">
+													<span>08:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>09:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>10:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>11:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>12:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>13:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>14:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>15:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>16:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>17:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>18:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>19:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>20:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>21:00</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="day">
+										<div class="head">
+											<p>Пт.</p>
+											<p>25 апр.</p>
+										</div>
+										<div class="body">
+											<div class="time-list">
+												<a href="#" class="time active">
+													<span>08:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>09:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>10:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>11:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>12:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>13:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>14:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>15:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>16:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>17:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>18:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>19:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>20:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>21:00</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="day">
+										<div class="head">
+											<p>Сб.</p>
+											<p>26 апр.</p>
+										</div>
+										<div class="body">
+											<div class="time-list">
+												<a href="#" class="time active">
+													<span>08:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>09:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>10:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>11:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>12:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>13:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>14:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>15:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>16:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>17:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>18:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>19:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>20:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>21:00</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="day">
+										<div class="head">
+											<p>Вс.</p>
+											<p>27 апр.</p>
+										</div>
+										<div class="body">
+											<div class="time-list">
+												<a href="#" class="time active">
+													<span>08:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>09:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>10:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>11:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>12:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>13:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>14:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>15:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>16:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>17:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>18:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>19:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>20:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>21:00</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="day">
+										<div class="head">
+											<p>Пн.</p>
+											<p>28 апр.</p>
+										</div>
+										<div class="body">
+											<div class="time-list">
+												<a href="#" class="time active">
+													<span>08:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>09:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>10:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>11:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>12:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>13:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>14:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>15:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>16:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>17:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>18:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>19:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>20:00</span>
+												</a>
+												<a href="#" class="time">
+													<span>21:00</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<span class="navigation-button next" id="next__calendar-mobile-slider">
+									<img src="media/icons/icon_arrow_calendar.svg" alt="" class="img-svg">
+								</span>
+							</div>
+						</div>
+						<div class="input-block">
+							<p>Ваше имя</p>
+							<input type="text" name="name">
+						</div>
+						<div class="input-block">
+							<p>ИИН пациента</p>
+							<input type="text" name="iin">
+						</div>
+						<div class="input-block">
+							<p>Ваш телефон</p>
+							<input type="text" name="phone" class="phone-mask" placeholder="+7(___) ___-____">
+							<span>
+								На указанный вами номер телефона будет отправлено SMS с кодом подтверждения
+							</span>
+						</div>
+					</div>
+					<div class="custom-form__footer">
+						<button type="submit" class="button button__middle button__blue">Записаться</button>
+					</div>
+				</form>
+				<div class="doctor-calendar-mobile">
+					<div class="body">
+						<span class="navigation-button prev" id="prev__calendar-mobile-slider">
+							<img src="media/icons/icon_arrow_calendar.svg" alt="" class="img-svg">
+						</span>
+						<div class="calendar calendar-mobile-slider owl-carousel owl-theme">
+							<div class="day">
+								<div class="head">
+									<p>Сегодня</p>
+									<p>23 апр.</p>
+								</div>
+								<div class="body">
+									<div class="time-list">
+										<a href="#" class="time active">
+											<span>08:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>09:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>10:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>11:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>12:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>13:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>14:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>15:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>16:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>17:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>18:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>19:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>20:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>21:00</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="day">
+								<div class="head">
+									<p>Завтра</p>
+									<p>24 апр.</p>
+								</div>
+								<div class="body">
+									<div class="time-list">
+										<a href="#" class="time active">
+											<span>08:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>09:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>10:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>11:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>12:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>13:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>14:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>15:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>16:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>17:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>18:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>19:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>20:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>21:00</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="day">
+								<div class="head">
+									<p>Пт.</p>
+									<p>25 апр.</p>
+								</div>
+								<div class="body">
+									<div class="time-list">
+										<a href="#" class="time active">
+											<span>08:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>09:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>10:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>11:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>12:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>13:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>14:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>15:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>16:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>17:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>18:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>19:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>20:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>21:00</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="day">
+								<div class="head">
+									<p>Сб.</p>
+									<p>26 апр.</p>
+								</div>
+								<div class="body">
+									<div class="time-list">
+										<a href="#" class="time active">
+											<span>08:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>09:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>10:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>11:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>12:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>13:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>14:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>15:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>16:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>17:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>18:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>19:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>20:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>21:00</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="day">
+								<div class="head">
+									<p>Вс.</p>
+									<p>27 апр.</p>
+								</div>
+								<div class="body">
+									<div class="time-list">
+										<a href="#" class="time active">
+											<span>08:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>09:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>10:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>11:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>12:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>13:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>14:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>15:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>16:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>17:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>18:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>19:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>20:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>21:00</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="day">
+								<div class="head">
+									<p>Пн.</p>
+									<p>28 апр.</p>
+								</div>
+								<div class="body">
+									<div class="time-list">
+										<a href="#" class="time active">
+											<span>08:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>09:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>10:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>11:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>12:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>13:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>14:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>15:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>16:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>17:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>18:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>19:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>20:00</span>
+										</a>
+										<a href="#" class="time">
+											<span>21:00</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<span class="navigation-button next" id="next__calendar-mobile-slider">
+							<img src="media/icons/icon_arrow_calendar.svg" alt="" class="img-svg">
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <header class="wrapper-full section-header">
 	<div class="wrapper-fix wrapper-header">
@@ -51,7 +770,7 @@
 				<a href="#" class="button button__icon">
 					<img src="media/icons/icon_profile.svg" alt="">
 				</a>
-				<a href="#" class="button button__middle button__blue ">
+				<a href="#doctor-form" class="button button__middle button__blue open-modal">
 					Записаться на приём
 				</a>
 			</div>
@@ -70,408 +789,473 @@
 					</select>
 				</div>
 			</div>
+			<div class="container-header__row-03">
+				<a href="#" class="header-logotype">
+					<img src="media/logotype_small.svg" alt="">
+					<span>MEDERI HEALTH</span>
+				</a>
+				<div class="header-mobile-menu">
+					<img src="media/icons/icon_burger.svg" alt="Menu" class="img-svg">
+					<img src="media/icons/icon_close.svg" alt="Close">
+				</div>
+			</div>
+			<div class="container-header__row-04">
+				<div class="header-menu">
+					<ul>
+						<li>
+							<a href="#">О нас</a>
+						</li>
+						<li>
+							<a href="#">Направления</a>
+						</li>
+						<li>
+							<a href="#">Врачи</a>
+						</li>
+						<li>
+							<a href="#">Стоимость услуг</a>
+						</li>
+						<li>
+							<a href="#">Контакты</a>
+						</li>
+						<li>
+							<a href="#">Контакты</a>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="button button__icon">
+					<img src="media/icons/icon_profile.svg" alt="">
+				</a>
+				<a href="#doctor-form" class="button button__middle button__blue open-modal">
+					Записаться на приём
+				</a>
+				<a href="#" class="header-phone">
+					+7-777-77-77
+				</a>
+				<div class="custom-select header-select">
+					<select id="city-select">
+						<option value="1">Клиника в Алмате</option>
+						<option value="2">Клиника в Астане</option>
+						<option value="3">Клиника в Караганде</option>
+					</select>
+				</div>
+			</div>
 		</div>
 	</div>
 </header>
 
-<section class="wrapper-full section-slider">
-	<div class="wrapper-fix wrapper-slider">
-		<div class="container-slider">
-			<div class="header-slider owl-carousel owl-theme">
-
-				<div class="header-slider__item item">
-					<img src="media/header-slider/slide_01.jpg" alt="">
-				</div>
-
-				<div class="header-slider__item item">
-					<img src="media/header-slider/slide_01.jpg" alt="">
-				</div>
-
-				<div class="header-slider__item item">
-					<img src="media/header-slider/slide_01.jpg" alt="">
-				</div>
-
-				<div class="header-slider__item item">
-					<img src="media/header-slider/slide_01.jpg" alt="">
-				</div>
-				
+<section class="wrapper-full section-doctor">
+	<div class="wrapper-fix wrapper-doctor">
+		<div class="container-doctor">
+			<div class="container-doctor__row-01">
+				<h2 class="headline headline__middle">Врачи / Иванов Иван Иванович</h2>
 			</div>
-		</div>
-	</div>
-</section>
-
-<section class="wrapper-full section-areas">
-	<div class="wrapper-fix wrapper">
-		<div class="container-areas">
-			<div class="container-areas__row-01">
-				<h2 class="headline headline__middle">Направления</h2>
-			</div>
-			<div class="container-areas__row-02">
-				<div class="container-areas__links">
-					<a href="#" class="link">
-						<p>Гастроэнтеролог</p>
-						<div>
-							<img src="media/icons/icon_grey_arrow.svg" alt="">
-						</div>
-					</a>
-					<a href="#" class="link">
-						<p>Дерматолог</p>
-						<div>
-							<img src="media/icons/icon_grey_arrow.svg" alt="">
-						</div>
-					</a>
-					<a href="#" class="link">
-						<p>Дерматолог</p>
-						<div>
-							<img src="media/icons/icon_grey_arrow.svg" alt="">
-						</div>
-					</a>
-					<a href="#" class="link">
-						<p>Медсестра</p>
-						<div>
-							<img src="media/icons/icon_grey_arrow.svg" alt="">
-						</div>
-					</a>
-					<a href="#" class="link">
-						<p>Пластический хирург</p>
-						<div>
-							<img src="media/icons/icon_grey_arrow.svg" alt="">
-						</div>
-					</a>
-					<a href="#" class="link">
-						<p>Пластический хирург</p>
-						<div>
-							<img src="media/icons/icon_grey_arrow.svg" alt="">
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="container-areas__row-03">
-				<a href="#" class="button button__combined button__middle">
-					<p>Смотреть всех врачей</p>
-					<img src="media/icons/icon_blue_arrow-right.svg" alt="" class="img-svg">
-				</a>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="wrapper-full section-doctors">
-	<div class="wrapper-fix wrapper-doctors">
-		<div class="container-doctors">
-			<div class="container-doctors__row-01">
-				<h2 class="headline headline__middle">Врачи</h2>
-			</div>
-			<div class="container-doctors__row-02">
-
-				<div class="doctors-slider owl-carousel owl-theme">
-
-					<div class="doctors-slider__item doctor__item item">
-						<div class="head">
-							<div class="image">
-								<img src="media/avatar.png" alt="">
-							</div>
-							<div class="time-list">
-
-								<a href="#" class="time">
-									<span>08:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>09:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>10:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>Ещё</span>
-									<img src="media/icons/icon_white_chevron.svg" alt="">
-								</a>
-							</div>
-
-						</div>
-						<div class="body">
-							<p class="name">Фамилия <br> Имя Отчество</p>
-							<p>Стаж 12 лет</p>
-							<p>Гастроэнтеролог, Гепатолог, Инфекционист, Паразитолог</p>
-							<p>Врач высшей категории</p>
-						</div>
-						<div class="footer">
-							<span class="price-previous">5.000 ₸</span>
-							<span class="price-current">5.000 ₸</span>
-						</div>
+			<div class="container-doctor__row-02">
+				<div class="container-doctor__column-01">
+					<div class="doctor-photo__desktop">
+						<img src="media/photo.png" alt="">
 					</div>
-
-					<div class="doctors-slider__item doctor__item item">
-						<div class="head">
-							<div class="image">
-								<img src="media/avatar.png" alt="">
-							</div>
-							<div class="time-list">
-
-								<a href="#" class="time">
-									<span>08:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>09:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>10:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>Ещё</span>
-									<img src="media/icons/icon_white_chevron.svg" alt="">
-								</a>
-							</div>
-
-						</div>
-						<div class="body">
-							<p class="name">Фамилия <br> Имя Отчество</p>
-							<p>Стаж 12 лет</p>
-							<p>Гастроэнтеролог, Гепатолог, Инфекционист, Паразитолог</p>
-							<p>Врач высшей категории</p>
-						</div>
-						<div class="footer">
-							<span class="price-previous">5.000 ₸</span>
-							<span class="price-current">5.000 ₸</span>
-						</div>
-					</div>
-
-					<div class="doctors-slider__item doctor__item item">
-						<div class="head">
-							<div class="image">
-								<img src="media/avatar.png" alt="">
-							</div>
-							<div class="time-list">
-
-								<a href="#" class="time">
-									<span>08:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>09:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>10:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>Ещё</span>
-									<img src="media/icons/icon_white_chevron.svg" alt="">
-								</a>
-							</div>
-
-						</div>
-						<div class="body">
-							<p class="name">Фамилия <br> Имя Отчество</p>
-							<p>Стаж 12 лет</p>
-							<p>Гастроэнтеролог, Гепатолог, Инфекционист, Паразитолог</p>
-							<p>Врач высшей категории</p>
-						</div>
-						<div class="footer">
-							<span class="price-previous">5.000 ₸</span>
-							<span class="price-current">5.000 ₸</span>
-						</div>
-					</div>
-
-					<div class="doctors-slider__item doctor__item item">
-						<div class="head">
-							<div class="image">
-								<img src="media/avatar.png" alt="">
-							</div>
-							<div class="time-list">
-
-								<a href="#" class="time">
-									<span>08:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>09:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>10:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>Ещё</span>
-									<img src="media/icons/icon_white_chevron.svg" alt="">
-								</a>
-							</div>
-
-						</div>
-						<div class="body">
-							<p class="name">Фамилия <br> Имя Отчество</p>
-							<p>Стаж 12 лет</p>
-							<p>Гастроэнтеролог, Гепатолог, Инфекционист, Паразитолог</p>
-							<p>Врач высшей категории</p>
-						</div>
-						<div class="footer">
-							<span class="price-previous">5.000 ₸</span>
-							<span class="price-current">5.000 ₸</span>
-						</div>
-					</div>
-
-					<div class="doctors-slider__item doctor__item item">
-						<div class="head">
-							<div class="image">
-								<img src="media/avatar.png" alt="">
-							</div>
-							<div class="time-list">
-
-								<a href="#" class="time">
-									<span>08:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>09:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>10:00</span>
-								</a>
-								<a href="#" class="time">
-									<span>Ещё</span>
-									<img src="media/icons/icon_white_chevron.svg" alt="">
-								</a>
-							</div>
-
-						</div>
-						<div class="body">
-							<p class="name">Фамилия <br> Имя Отчество</p>
-							<p>Стаж 12 лет</p>
-							<p>Гастроэнтеролог, Гепатолог, Инфекционист, Паразитолог</p>
-							<p>Врач высшей категории</p>
-						</div>
-						<div class="footer">
-							<span class="price-previous">5.000 ₸</span>
-							<span class="price-current">5.000 ₸</span>
-						</div>
-					</div>
-					
-				</div>
-
-			</div>
-			<div class="container-doctors__row-03">
-				<div class="slider-navigation">
-					<span class="prev" id="prev__doctors-slider">
-						<img src="media/icons/icon_arrow_slider.svg" alt="" class="img-svg">
-					</span>
-					<span class="next" id="next__doctors-slider">
-						<img src="media/icons/icon_arrow_slider.svg" alt="" class="img-svg">
-					</span>
-				</div>
-				<a href="#" class="button button__combined button__middle">
-					<p>Смотреть всех врачей</p>
-					<img src="media/icons/icon_blue_arrow-right.svg" alt="">
-				</a>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="wrapper-full section-about">
-	<div class="wrapper-fix wrapper-about">
-		<div class="container-about">
-			<div class="container-about__row-01">
-				<h2 class="headline headline__middle">Ведущая многопрофильная клиника</h2>
-			</div>
-			<div class="container-about__row-02">
-				<div class="container-about__column-01">
-					<div>
-						<p>Работаем на уровне лучших мировых стандартов, внедряя и развивая передовые методы лечения</p>
-					</div>
-					<div>
-						<p>Комфорт на всех этапах лечения</p>
-						<div class="numbers">
-							<div>
-								<span>57</span>
-								<p>НАПРАВЛЕНИЙ ЛЕЧЕНИЯ</p>
-							</div>
-							<div>
-								<span>30</span>
-								<p>ЛЕТ ЗАБОТИМСЯ О ВАШЕМ ЗДОРОВЬЕ</p>
-							</div>
-							<div>
-								<span>40</span>
-								<p>ВРАЧЕЙ ПРОФЕССИЛНАЛОВ</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="container-about__column-02">
-					<div>Использование высокотехнологичных малоинвазивных методов</div>
-					<div>Безупречная вежливость и внимательность персонала, высокий уровень сервиса</div>
-					<div>Передовое техническое оснащение и высокотехнологичное оборудование</div>
-					<div>Быстрая и качественная диагностика</div>
-					<div>Применение результативных методик лечения, принятых мировым медицинским сообществом</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="wrapper-full section-contacts">
-	<div class="wrapper-fix wrapper-contacts">
-		<div class="container-contacts">
-			<div class="container-contacts__row-01">
-				<h2 class="headline headline__middle">Контакты</h2>
-			</div>
-			<div class="container-contacts__row-02">
-				<div class="container-contacts__column-01">
-					<div class="addres-list">
-
-						<div class="addres-item">
+					<div class="doctor-about">
+						<div class="doctor-about__tab active">
 							<div class="head">
-								<h3>МЕДИЦИНСКИЙ ЦЕНТР VIA MEDICAL</h3>
+								<p>О ВРАЧЕ</p>
+								<img src="media/icons/icon_grey_chevron.svg" alt="">
 							</div>
 							<div class="body">
-								<p>ул. Розыбакиева, 218а (выше Тимирязева), Бостандыкский район, Алматы</p>
-								<p>Круглосуточно</p>
-								<a href="tel: 8 (747) 095-21-88">8 (747) 095-21-88</a>
-								<a href="mailto: info@viamedical.com">info@viamedical.com</a>
+								<p>Принимает взрослых и детей с 16 лет.</p>
+								<p>Ведущий хирург в направлении имплантационного слухопротезирования в ЛОР отделении профессора Магнан в Марселе.</p>
+								<p>Выполняет такие сложнейшие операции в области головы и шеи, как:</p>
+								<p>операция по удалению холестеатомы с реконструкцией среднего уха;
+									оссикулопластика;
+									стапедопластика (при отосклерозе);
+									операции при головокружениях (вестибулярная нейротомия при инвалидизирующей форме болезни Меньера, операции на полукружных каналах).
+								</p>
 							</div>
 						</div>
-
-						<div class="addres-item">
+						<div class="doctor-about__tab">
 							<div class="head">
-								<h3>МЕДИЦИНСКИЙ ЦЕНТР VIA MEDICAL</h3>
+								<p>ОПЫТ РАБОТЫ</p>
+								<img src="media/icons/icon_grey_chevron.svg" alt="">
 							</div>
 							<div class="body">
-								<p>ул. Розыбакиева, 218а (выше Тимирязева), Бостандыкский район, Алматы</p>
-								<p>Круглосуточно</p>
-								<a href="tel: 8 (747) 095-21-88">8 (747) 095-21-88</a>
-								<a href="mailto: info@viamedical.com">info@viamedical.com</a>
+								<p>Принимает взрослых и детей с 16 лет.</p>
+								<p>Ведущий хирург в направлении имплантационного слухопротезирования в ЛОР отделении профессора Магнан в Марселе.</p>
+								<p>Выполняет такие сложнейшие операции в области головы и шеи, как:</p>
+								<p>операция по удалению холестеатомы с реконструкцией среднего уха;
+									оссикулопластика;
+									стапедопластика (при отосклерозе);
+									операции при головокружениях (вестибулярная нейротомия при инвалидизирующей форме болезни Меньера, операции на полукружных каналах).
+								</p>
 							</div>
 						</div>
-
-						<div class="addres-item">
+						<div class="doctor-about__tab">
 							<div class="head">
-								<h3>МЕДИЦИНСКИЙ ЦЕНТР VIA MEDICAL</h3>
+								<p>ОБРАЗОВАНИЕ</p>
+								<img src="media/icons/icon_grey_chevron.svg" alt="">
 							</div>
 							<div class="body">
-								<p>ул. Розыбакиева, 218а (выше Тимирязева), Бостандыкский район, Алматы</p>
-								<p>Круглосуточно</p>
-								<a href="tel: 8 (747) 095-21-88">8 (747) 095-21-88</a>
-								<a href="mailto: info@viamedical.com">info@viamedical.com</a>
+								<p>Принимает взрослых и детей с 16 лет.</p>
+								<p>Ведущий хирург в направлении имплантационного слухопротезирования в ЛОР отделении профессора Магнан в Марселе.</p>
+								<p>Выполняет такие сложнейшие операции в области головы и шеи, как:</p>
+								<p>операция по удалению холестеатомы с реконструкцией среднего уха;
+									оссикулопластика;
+									стапедопластика (при отосклерозе);
+									операции при головокружениях (вестибулярная нейротомия при инвалидизирующей форме болезни Меньера, операции на полукружных каналах).
+								</p>
 							</div>
 						</div>
-
-						<div class="addres-item">
-							<div class="head">
-								<h3>МЕДИЦИНСКИЙ ЦЕНТР VIA MEDICAL</h3>
-							</div>
-							<div class="body">
-								<p>ул. Розыбакиева, 218а (выше Тимирязева), Бостандыкский район, Алматы</p>
-								<p>Круглосуточно</p>
-								<a href="tel: 8 (747) 095-21-88">8 (747) 095-21-88</a>
-								<a href="mailto: info@viamedical.com">info@viamedical.com</a>
-							</div>
-						</div>
-
 					</div>
 				</div>
-				<div class="container-contacts__column-02">
-					<div class="map"></div>
+				<div class="container-doctor__column-02">
+					<div class="doctor-photo__mobile">
+						<img src="media/photo.png" alt="">
+					</div>
+					<div class="doctor-info">
+						<p>Иванов Иван Иванович</p>
+						<div>
+							<p class="uppercase">ГАСТРОЭНТЕРОЛОГ, ГЕПАТОЛОГ, ИНФЕКЦИОНИСТ, ПАРАЗИТОЛОГ</p>
+							<p>Врач высшей категории</p>
+							<p>Стаж 17 лет</p>
+						</div>
+						<p>
+							Стоимость приёма: 
+							<span class="previous">8.000 ₸</span>
+							<span>5.000 ₸</span>
+						</p>
+						<div>
+							<p>ул. Розыбакиева, 218а (выше Тимирязева), Бостандыкский район, Алматы</p>
+							<p>Станция метро: Сайран (1.9 км)</p>
+						</div>
+					</div>
+
+					<div class="doctor-calendar">
+						<div class="head">
+							<p>ЗАПИСАТЬСЯ НА ПРИЁМ</p>
+						</div>
+						<div class="body">
+							<span class="navigation-button prev" id="prev__calendar-slider">
+								<img src="media/icons/icon_arrow_calendar.svg" alt="" class="img-svg">
+							</span>
+							<div class="calendar calendar-slider owl-carousel owl-theme">
+								<div class="day">
+									<div class="head">
+										<p>Сегодня</p>
+										<p>23 апр.</p>
+									</div>
+									<div class="body">
+										<div class="time-list">
+											<a href="#" class="time active">
+												<span>08:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>09:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>10:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>11:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>12:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>13:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>14:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>15:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>16:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>17:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>18:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>19:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>20:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>21:00</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="day">
+									<div class="head">
+										<p>Завтра</p>
+										<p>24 апр.</p>
+									</div>
+									<div class="body">
+										<div class="time-list">
+											<a href="#" class="time active">
+												<span>08:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>09:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>10:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>11:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>12:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>13:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>14:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>15:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>16:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>17:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>18:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>19:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>20:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>21:00</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="day">
+									<div class="head">
+										<p>Пт.</p>
+										<p>25 апр.</p>
+									</div>
+									<div class="body">
+										<div class="time-list">
+											<a href="#" class="time active">
+												<span>08:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>09:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>10:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>11:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>12:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>13:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>14:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>15:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>16:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>17:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>18:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>19:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>20:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>21:00</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="day">
+									<div class="head">
+										<p>Сб.</p>
+										<p>26 апр.</p>
+									</div>
+									<div class="body">
+										<div class="time-list">
+											<a href="#" class="time active">
+												<span>08:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>09:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>10:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>11:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>12:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>13:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>14:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>15:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>16:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>17:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>18:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>19:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>20:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>21:00</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="day">
+									<div class="head">
+										<p>Вс.</p>
+										<p>27 апр.</p>
+									</div>
+									<div class="body">
+										<div class="time-list">
+											<a href="#" class="time active">
+												<span>08:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>09:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>10:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>11:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>12:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>13:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>14:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>15:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>16:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>17:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>18:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>19:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>20:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>21:00</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="day">
+									<div class="head">
+										<p>Пн.</p>
+										<p>28 апр.</p>
+									</div>
+									<div class="body">
+										<div class="time-list">
+											<a href="#" class="time active">
+												<span>08:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>09:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>10:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>11:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>12:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>13:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>14:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>15:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>16:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>17:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>18:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>19:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>20:00</span>
+											</a>
+											<a href="#" class="time">
+												<span>21:00</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<span class="navigation-button next" id="next__calendar-slider">
+								<img src="media/icons/icon_arrow_calendar.svg" alt="" class="img-svg">
+							</span>
+						</div>
+					</div>
+
 				</div>
-			</div>
-			<div class="container-contacts__row-03">
-				<a href="#" class="button button__combined button__middle">
-					<p>Смотреть все клиники</p>
-					<img src="media/icons/icon_blue_arrow-right.svg" alt="">
-				</a>
 			</div>
 		</div>
 	</div>
@@ -543,6 +1327,116 @@
 				<div>
 					<a href="#">Политика конфиденциальности</a>
 					<span>©2023. Via Health Clinic</span>
+				</div>
+			</div>
+			<div class="container-footer__row-03">
+				<div>
+					<img src="media/logotype_large.svg" alt="">
+				</div>
+				<div>
+					<a href="#doctor-form" class="button button__small button__blue open-modal">
+						Записаться на приём
+					</a>
+				</div>
+				<div class="footer__menu">
+					<ul>
+						<li>
+							<a href="#">О нас</a>
+						</li>
+						<li>
+							<a href="#">Контакты</a>
+						</li>
+						<li>
+							<a href="#">Вакансии</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__menu">
+					<ul>
+						<li>
+							<a href="#">Направления</a>
+						</li>
+						<li>
+							<a href="#">Стоимость услуг</a>
+						</li>
+						<li>
+							<a href="#">Врачи</a>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<span>Телефон:</span>
+					<p>
+						<a href="tel: +7-777-77-77">+7-777-77-77</a>
+					</p>
+				</div>
+				<div class="footer__social-media">
+					<a href="#">
+						<img src="media/icons/icon_instagram.svg" alt="">
+					</a>
+					<a href="#">
+						<img src="media/icons/icon_facebook.svg" alt="">
+					</a>
+					<a href="#">
+						<img src="media/icons/icon_whatsapp.svg" alt="">
+					</a>
+					<a href="#">
+						<img src="media/icons/icon_telegram.svg" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="container-footer__row-04">
+				<div>
+					<img src="media/logotype_large.svg" alt="">
+				</div>
+				<div class="footer__menu">
+					<ul>
+						<li>
+							<a href="#">О нас</a>
+						</li>
+						<li>
+							<a href="#">Контакты</a>
+						</li>
+						<li>
+							<a href="#">Вакансии</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="#">Направления</a>
+						</li>
+						<li>
+							<a href="#">Стоимость услуг</a>
+						</li>
+						<li>
+							<a href="#">Врачи</a>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<a href="#doctor-form" class="button button__small button__blue open-modal">
+						Записаться на приём
+					</a>
+				</div>
+				<div>
+					<span>Телефон:</span>
+					<p>
+						<a href="tel: +7-777-77-77">+7-777-77-77</a>
+					</p>
+				</div>
+				<div class="footer__social-media">
+					<a href="#">
+						<img src="media/icons/icon_instagram.svg" alt="">
+					</a>
+					<a href="#">
+						<img src="media/icons/icon_facebook.svg" alt="">
+					</a>
+					<a href="#">
+						<img src="media/icons/icon_whatsapp.svg" alt="">
+					</a>
+					<a href="#">
+						<img src="media/icons/icon_telegram.svg" alt="">
+					</a>
 				</div>
 			</div>
 		</div>

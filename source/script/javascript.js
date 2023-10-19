@@ -107,9 +107,21 @@ jQuery('.doctors-slider').owlCarousel({
     autoWidth: false,
     autoHeight: false,
     autoplay: false,
-    items:4,
     smartSpeed: 2000,
-    margin: 10
+    margin: 10,
+    responsive: {
+        0 : {
+            items: 2,
+            touchDrag: true,
+            mouseDrag: true,
+        }, 
+        650 : {
+            items: 3,
+        },
+        992 : {
+            items: 4,
+        }
+    },
 })
 
 let owlDoctorsSlider = jQuery('.doctors-slider');
@@ -125,6 +137,87 @@ jQuery('#next__doctors-slider').click(function() {
 
 /*--------------------------------------------------------------
 >>> DOCTORS SLIDER CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> CALENDAR SLIDER CODE START:
+--------------------------------------------------------------*/
+
+jQuery('.calendar-slider').owlCarousel({
+    loop: false,
+    touchDrag: false,
+    mouseDrag: false,
+    nav: false,
+    dots: false,
+    autoWidth: false,
+    autoHeight: false,
+    autoplay: false,
+    smartSpeed: 1000,
+    margin: 10,
+    responsive: {
+        0 : {
+            items: 3,
+            touchDrag: true,
+            mouseDrag: true,
+        }, 
+        992 : {
+            items: 4,
+        }
+    },
+})
+
+let owlCalendarSlider = jQuery('.calendar-slider');
+owlCalendarSlider.owlCarousel();
+
+jQuery('#prev__calendar-slider').click(function() {
+    owlCalendarSlider.trigger('prev.owl.carousel');
+})
+
+jQuery('#next__calendar-slider').click(function() {
+    owlCalendarSlider.trigger('next.owl.carousel');
+})
+
+jQuery('.calendar-mobile-slider').owlCarousel({
+    loop: false,
+    touchDrag: false,
+    mouseDrag: false,
+    nav: false,
+    dots: false,
+    autoWidth: false,
+    autoHeight: false,
+    autoplay: false,
+    smartSpeed: 1000,
+    margin: 0,
+    responsive: {
+        0 : {
+            items: 3,
+            touchDrag: true,
+            mouseDrag: true,
+        },
+        722 : {
+            items: 2,
+        },
+        992 : {
+            items: 3,
+        }
+    },
+})
+
+let owlCalendarMobileSlider = jQuery('.calendar-mobile-slider');
+owlCalendarSlider.owlCarousel();
+
+jQuery('#prev__calendar-mobile-slider').click(function() {
+    owlCalendarMobileSlider.trigger('prev.owl.carousel');
+})
+
+jQuery('#next__calendar-mobile-slider').click(function() {
+    owlCalendarMobileSlider.trigger('next.owl.carousel');
+})
+
+/*--------------------------------------------------------------
+>>> CALENDAR SLIDER CODE END.
 --------------------------------------------------------------*/
 
 
@@ -165,6 +258,7 @@ jQuery('.open-modal').magnificPopup({
     type: 'inline',
     preloader: true,
     midClick: true,
+    showCloseBtn: false,
 });
 
 jQuery(document).on('click', '.close-modal', function (e) {
@@ -174,4 +268,642 @@ jQuery(document).on('click', '.close-modal', function (e) {
 
 /*--------------------------------------------------------------
 >>> MODAL FUNCTION CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> MOBILE MENU CODE START:
+--------------------------------------------------------------*/
+
+jQuery('.header-mobile-menu').click(function(){
+    jQuery(this).find('svg').toggleClass('disactive');
+    jQuery(this).find('img').toggleClass('active');
+
+    jQuery('.container-header__row-04').toggleClass('active');
+    jQuery('.container-header').toggleClass('gap');
+})
+
+/*--------------------------------------------------------------
+>>> MOBILE MENU CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> DATE PICKER ON MOBILE CODE START:
+--------------------------------------------------------------*/
+
+if(jQuery(window).width() < 722){
+    jQuery('.date-picker').click(function(){
+        jQuery(this).next().toggleClass('active');
+    })
+}
+
+/*--------------------------------------------------------------
+>>> DATE PICKER ON MOBILE CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> CATALOG FILTER CODE START:
+--------------------------------------------------------------*/
+
+jQuery('.container-catalog__row-05').click(function(){
+    jQuery(this).toggleClass('active');
+    jQuery('.container-catalog__row-06').toggleClass('active');
+})
+
+/*--------------------------------------------------------------
+>>> CATALOG FILTER CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> GOOGLE MAPS CODE START:
+--------------------------------------------------------------*/
+
+let map_01, map_02;
+
+async function initMap() {
+  const { Map } = await google.maps.importLibrary("maps");
+
+  city_01 = { lat: 43.2581387, lng: 76.9517876 };
+  city_02 = { lat: 51.124526, lng: 71.454522 };
+
+
+  map_01 = new Map(document.getElementById("map_01"), {
+    center: city_01,
+    zoom: 13,
+    styles: 
+        [
+            {
+                "featureType": "administrative",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#EDF0F1"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#EDF0F1"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#EDF0F1"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "color": "#EDF0F1"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape.natural",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "on"
+                    },
+                    {
+                        "color": "#EDF0F1"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape.natural.landcover",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "on"
+                    },
+                    {
+                        "color": "#EDF0F1"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape.natural.terrain",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#EDF0F1"
+                    },
+                    {
+                        "visibility": "on"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    },
+                    {
+                        "hue": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    },
+                    {
+                        "hue": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "color": "#704a3c"
+                    }
+                ]
+            },
+            {
+                "featureType": "transit",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#C0D3D6"
+                    }
+                ]
+            }
+        ]
+  });
+
+  map_02 = new Map(document.getElementById("map_02"), {
+    center: city_02,
+    zoom: 13,
+    styles: 
+        [
+            {
+                "featureType": "administrative",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#EDF0F1"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#EDF0F1"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#EDF0F1"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "color": "#EDF0F1"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape.natural",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "on"
+                    },
+                    {
+                        "color": "#EDF0F1"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape.natural.landcover",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "on"
+                    },
+                    {
+                        "color": "#EDF0F1"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape.natural.terrain",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#EDF0F1"
+                    },
+                    {
+                        "visibility": "on"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    },
+                    {
+                        "hue": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    },
+                    {
+                        "hue": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "color": "#704a3c"
+                    }
+                ]
+            },
+            {
+                "featureType": "transit",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#C0D3D6"
+                    }
+                ]
+            }
+        ]
+  })
+
+  }
+
+initMap();
+
+jQuery('.map-button').click(function(){
+    if(jQuery(this).hasClass('city-01')){
+      jQuery('.map-01').toggleClass('active');
+      jQuery('.map-02').toggleClass('active');
+    } else {
+      jQuery('.map-01').toggleClass('active');
+      jQuery('.map-02').toggleClass('active');
+    }
+})
+
+/*--------------------------------------------------------------
+>>> GOOGLE MAPS CODE END.
 --------------------------------------------------------------*/

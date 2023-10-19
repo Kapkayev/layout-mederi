@@ -58,13 +58,13 @@ body
 		height: 50px
 		font-size: 16px
 		line-height: 20px
-		padding: 15.5px 20px
+		padding: 15.5px 15px
 
 	&__small
 		height: 44px
 		font-size: 14px
 		line-height: 18px
-		padding: 12.5px 20px
+		padding: 12.5px 15px
 
 	&__blue
 		color: var(--font-white)
@@ -285,6 +285,105 @@ body
 		&:focus
 			outline: 1px solid var(--color-grey-80)
 
+.custom-select
+	.custom-select-container 
+		&.customSelect
+			width: 180px
+			height: 50px
+			position: relative
+			@include element_animation
+
+			&.is-open
+				.custom-select-opener
+					&::after
+						transform: rotate(180deg)
+						top: 25%
+						right: 15px
+
+				.custom-select-panel
+					max-height: none
+					display: block
+
+			.custom-select-opener
+				background-color: var(--bg-ultra-light-grey)
+				border-radius: 10px
+				border: none
+
+				list-style: none
+				cursor: pointer
+				padding: 15.5px 15px
+
+				&:focus
+					outline: 1px solid var(--color-grey-80)
+
+				&::after
+					content: ''
+					position: absolute
+					width: 15px
+					height: 15px
+					right: 15px
+					top: 45%
+					background-image: url('../media/icons/icon_grey_chevron.svg')
+					background-repeat: no-repeat
+					background-size: contain
+					transform: rotate(0deg)
+
+				span
+					font-family: var(--font-family-primary)
+					font-size: 16px
+					color: var(--font-medium-grey)
+
+			.custom-select-panel
+				width: 100%
+				display: none
+				overflow: hidden
+				
+				position: absolute
+				top: calc(100% + 15px)
+				left: 0
+				z-index: 100
+
+				list-style-type: none
+				border-radius: 10px
+				background-color: var(--bg-ultra-light-grey)
+				box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1)
+				border: none
+
+				padding: 0px 0px
+
+				.custom-select-option
+					position: relative
+
+					font-family: var(--font-family-primary)
+					font-size: 14px
+					color: var(--font-medium-grey)
+
+					cursor: pointer
+					border-bottom: 1px solid var(--color-grey-20)
+					padding: 12px 15px
+
+					@include element_animation
+
+					&:hover, &.has-focus
+						background-color: var(--bg-ultra-light-grey)
+						color: var(--font-medium-grey)
+
+					&:last-child
+						border: none
+
+					&.is-selected::before
+						content: ''
+						position: absolute
+						width: 16px
+						height: 16px
+						right: 0px
+						top: 35%
+
+						// background-image: url('../media/icons/icon_orange_check.svg')
+						// background-repeat: no-repeat
+						// background-size: contain
+						// padding: 0px 0px
+
 /* Input's style settings end. */
 
 /* UI STYLE SETTINGS END. */
@@ -473,109 +572,138 @@ body
 		&:focus
 			outline: 1px solid var(--color-grey-80)
 
-.custom-select
-	.custom-select-container 
-		&.customSelect
-			width: 180px
-			height: 50px
-			position: relative
-			@include element_animation
+	.custom-select.header-select
+		.custom-select-container 
+			&.customSelect
+				width: 256px
 
-			&.is-open
-				.custom-select-opener
-					&::after
-						transform: rotate(180deg)
-						top: 25%
-						right: 15px
+.container-header__row-03
+	display: none
+	justify-content: space-between
+	align-items: center
+	flex: 1
 
-				.custom-select-panel
-					max-height: none
-					display: block
+	background-color: var(--bg-ultra-light-grey)
+	border-radius: 10px
+	padding: 5px 10px
 
-			.custom-select-opener
-				background-color: var(--bg-ultra-light-grey)
-				border-radius: 10px
-				border: none
+	.header-logotype
+		display: flex
+		justify-content: flex-start
+		align-items: center
+		column-gap: 5px
+		text-decoration: none
+	
+		transition-duration: 0.2s
 
-				list-style: none
-				cursor: pointer
-				padding: 15.5px 15px
+		&:hover
+			color: var(--color-grey-dark)
 
-				&:focus
-					outline: 1px solid var(--color-grey-80)
+		&:focus
+			outline: 1px solid var(--color-grey-80)
 
-				&::after
-					content: ''
-					position: absolute
-					width: 15px
-					height: 15px
-					right: 15px
-					top: 45%
-					background-image: url('../media/icons/icon_grey_chevron.svg')
-					background-repeat: no-repeat
-					background-size: contain
-					transform: rotate(0deg)
+		span
+			font-size: 14px
+			font-weight: 400
+			color: var(--font-dark-grey)
 
-				span
-					font-family: var(--font-family-primary)
-					font-size: 16px
-					color: var(--font-medium-grey)
+	.header-mobile-menu
+		display: flex
+		justify-content: center
+		align-items: center	
+		cursor: pointer
 
-			.custom-select-panel
-				width: 100%
+		&:hover
+			.img-svg 
+				rect
+					fill: var(--color-blue-dark)
+
+		svg
+			display: block
+
+			&.disactive
 				display: none
-				overflow: hidden
 				
-				position: absolute
-				top: calc(100% + 15px)
-				left: 0
-				z-index: 100
+		img
+			display: none
 
-				list-style-type: none
-				border-radius: 10px
-				background-color: var(--bg-ultra-light-grey)
-				box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1)
-				border: none
+			&.active
+				display: block
 
-				padding: 0px 0px
+.container-header__row-04
+	height: 0px
+	opacity: 0
+	overflow: hidden
 
-				.custom-select-option
-					position: relative
+	display: none
+	flex-direction: column
+	row-gap: 5px
 
-					font-family: var(--font-family-primary)
+	transition-duration: 0.3s
+
+	&.active
+		height: auto
+		opacity: 1
+		overflow: visible
+		margin: 0px 0px 5px 0px
+
+	.header-menu
+		ul
+			display: flex
+			flex-direction: column
+			row-gap: 5px
+			list-style-type: none
+
+			li
+				a
+					width: 100%
+					display: inline-block
+
 					font-size: 14px
-					color: var(--font-medium-grey)
+					font-weight: 400
+					color: var(--font-dark-grey)
+					text-decoration: none
+					text-align: center
 
-					cursor: pointer
-					border-bottom: 1px solid var(--color-grey-20)
-					padding: 12px 15px
+					background-color: var(--bg-ultra-light-grey)
+					border-radius: 10px
+					padding: 13px 20px
 
-					@include element_animation
+					transition-duration: 0.2s
 
-					&:hover, &.has-focus
-						background-color: var(--bg-ultra-light-grey)
-						color: var(--font-medium-grey)
+					&:hover
+						color: var(--color-grey-dark)
 
-					&:last-child
-						border: none
+					&:focus
+						outline: 1px solid var(--color-grey-80)
 
-					&.is-selected::before
-						content: ''
-						position: absolute
-						width: 16px
-						height: 16px
-						right: 0px
-						top: 35%
+	.button
+		text-align: center
 
-						// background-image: url('../media/icons/icon_orange_check.svg')
-						// background-repeat: no-repeat
-						// background-size: contain
-						// padding: 0px 0px
+	.header-phone
+		width: 100%
+		display: inline-block
 
-.custom-select.header-select
-	.custom-select-container 
-		&.customSelect
-			width: 256px
+		font-size: 14px
+		font-weight: 400
+		color: var(--font-dark-grey)
+		text-decoration: none
+		text-align: center
+
+		background-color: var(--bg-ultra-light-grey)
+		border-radius: 10px
+		padding: 13.5px 15px
+
+		&:hover
+			color: var(--color-grey-dark)
+			
+		&:focus
+			outline: 1px solid var(--color-grey-80)
+
+	.custom-select.header-select
+		.custom-select-container 
+			&.customSelect
+				width: 100%
 
 /* HEADER STYLE SETTINGS END. */
 
@@ -700,6 +828,8 @@ body
 				justify-content: space-between
 
 .doctor__item
+	min-width: 200px
+
 	display: flex
 	flex-direction: column
 	row-gap: 15px
@@ -713,10 +843,11 @@ body
 		display: flex
 		justify-content: space-between
 		align-items: flex-start
+		column-gap: 10px
 
 		.image
-			width: 111px
-			height: 111px
+			min-width: 111px
+			min-height: 111px
 			position: relative
 
 			img
@@ -725,16 +856,20 @@ body
 				position: absolute
 				left: 50%
 				top: 50%
+				border-radius: 10px
 				transform: translate(-50%, -50%)
 				object-fit: cover
 
 		.time-list
+			width: 100%
 			display: flex
 			flex-direction: column
+			align-items: flex-end
 			row-gap: 5px
 
 			.time
-				width: 95px
+				width: 100%
+				max-width: 95px
 				height: 24px
 				display: inline-flex
 				align-items: center
@@ -922,11 +1057,17 @@ body
 			.container-contacts__column-02
 				width: calc(50% - 15px)
 
-				.map
+				.maps
 					width: 100%
 					height: 100%
 					border-radius: 10px
 					background-color: var(--elements-white)
+
+					.map-01, .map-02
+						display: none
+
+						&.active
+							display: block
 
 		.container-contacts__row-03
 			.button
@@ -967,6 +1108,10 @@ body
 				font-weight: 400
 				color: var(--font-medium-grey)
 				text-decoration: none
+
+				&.map-button
+					text-decoration: underline
+					cursor: pointer
 
 /* CONTACTS STYLE SETTINGS END. */
 
@@ -1044,6 +1189,91 @@ body
 				color: var(--font-dark-grey)
 				text-decoration: none
 
+		.container-footer__row-03
+			display: none
+			grid-template-columns: repeat(2, 1fr)
+			row-gap: 20px
+
+			border-radius: 10px
+			background-color: var(--bg-light-grey)
+
+			padding: 15px 10px 15px 10px
+
+			img
+				max-width: 130px
+
+			.button
+				width: 100%
+				text-align: center
+
+			& > div
+				span
+					font-size: 16px
+					line-height: 20px
+					font-weight: 400
+					color: var(--font-dark-grey)
+
+					display: inline-block
+					margin: 20px 0px 0px 0px
+
+				p
+					margin: 20px 0px 0px 0px
+
+					a
+						font-size: 32px
+						line-height: 40px
+						font-weight: 400
+						color: var(--font-dark-grey)
+						text-decoration: none
+
+			.footer__social-media
+				margin: 20px 0px 0px 0px
+
+			.footer__menu
+				display: flex
+				flex-direction: column
+
+		.container-footer__row-04
+			display: none
+			flex-direction: column
+			row-gap: 20px
+
+			border-radius: 10px
+			background-color: var(--bg-light-grey)
+
+			padding: 15px 10px 15px 10px
+
+			img
+				max-width: 130px
+
+			.button
+				width: 100%
+				text-align: center
+
+			.footer__menu
+				display: flex
+				flex-direction: column
+
+			& > div
+				span
+					font-size: 16px
+					line-height: 20px
+					font-weight: 400
+					color: var(--font-dark-grey)
+
+				p
+					margin: 20px 0px 0px 0px
+
+					a
+						font-size: 32px
+						line-height: 40px
+						font-weight: 400
+						color: var(--font-dark-grey)
+						text-decoration: none
+
+			.footer__social-media
+				margin: 20px 0px 0px 0px
+
 .footer__social-media
 	display: flex
 	column-gap: 10px
@@ -1116,6 +1346,19 @@ body
 
 .doctor-photo__mobile
 	display: none
+	height: 360px
+	position: relative
+
+	img
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		object-fit: cover
+
+		border-radius: 10px
 
 .doctor-info
 	display: flex
@@ -1155,6 +1398,9 @@ body
 			color: var(--font-grey)
 			padding: 0px 5px
 
+
+/* Doctor calendar for Desktop start: */
+
 .doctor-calendar
 	height: 100%
 	border-radius: 10px
@@ -1171,7 +1417,205 @@ body
 			text-transform: uppercase
 
 	.body
+		display: flex
+		justify-content: center
+		align-items: flex-start
+		column-gap: 5px
+
 		padding: 0px 20px 30px 20px
+
+		.navigation-button
+			display: block
+			width: 32px
+			height: 32px
+
+			cursor: pointer
+			transition-duration: 0.2s
+
+			&.prev
+				transform: rotate(0deg)
+
+			&.next
+				transform: rotate(180deg)
+
+			.img-svg 
+				path
+					stroke: var(--bt-blue)
+
+			&:hover
+				.img-svg 
+					path
+						stroke: var(--color-blue-dark)
+
+		.calendar
+			width: calc(100% - 74px)
+			
+			.day
+				width: 105px
+				height: auto
+				display: flex
+				flex-direction: column
+				row-gap: 20px
+
+				.head
+					padding: 0px 0px
+
+					p
+						font-size: 14px
+						line-height: 18px
+						color: var(--color-grey-40)
+						text-transform: initial
+						text-align: center
+
+				.body
+					padding: 0px 0px
+
+					.time-list
+						width: 100%
+						display: flex
+						flex-direction: column
+						row-gap: 5px
+
+						.time
+							width: 100%
+							max-width: 105px
+							height: 40px
+							display: inline-flex
+							align-items: center
+							justify-content: center
+
+							font-size: 16px
+							line-height: 18px
+							font-weight: 600
+							color: var(--font-white)
+							text-decoration: none
+
+							border-radius: 10px
+							background-color: var(--bt-blue)
+
+							transition-duration: 0.3s
+
+							&:hover
+								background-color: var(--color-blue-dark)
+
+							&.active
+								background-color: var(--color-blue-20)
+
+							img
+								max-width: 22px
+
+/* Doctor calendar for Desktop end. */
+
+
+/* Doctor calendar for Modal start: */
+
+.doctor-calendar-mobile
+	display: none
+
+	width: 300px
+	border-radius: 10px
+	background-color: var(--bg-ultra-light-grey)
+
+	.head
+		padding: 30px 30px
+
+		p
+			font-size: 16px
+			line-height: 20px
+			font-weight: 400
+			color: var(--font-dark-grey)
+			text-transform: uppercase
+
+	.body
+		display: flex
+		justify-content: center
+		align-items: flex-start
+		column-gap: 5px
+
+		padding: 20px 5px 30px 5px
+
+		.navigation-button
+			display: block
+			width: 32px
+			height: 32px
+
+			cursor: pointer
+			transition-duration: 0.2s
+
+			&.prev
+				transform: rotate(0deg)
+
+			&.next
+				transform: rotate(180deg)
+
+			.img-svg 
+				path
+					stroke: var(--bt-blue)
+
+			&:hover
+				.img-svg 
+					path
+						stroke: var(--color-blue-dark)
+
+		.calendar
+			width: calc(100% - 74px)
+			padding: 0px 0px 0px 10px
+			
+			.day
+				width: 55px
+				height: auto
+				display: flex
+				flex-direction: column
+				row-gap: 20px
+
+				.head
+					padding: 0px 0px
+
+					p
+						font-size: 14px
+						line-height: 18px
+						color: var(--color-grey-40)
+						text-transform: initial
+						text-align: center
+
+				.body
+					padding: 0px 0px
+
+					.time-list
+						width: 100%
+						display: flex
+						flex-direction: column
+						row-gap: 5px
+
+						.time
+							width: 100%
+							max-width: 105px
+							height: 38px
+							display: inline-flex
+							align-items: center
+							justify-content: center
+
+							font-size: 14px
+							line-height: 16px
+							font-weight: 600
+							color: var(--font-white)
+							text-decoration: none
+
+							border-radius: 10px
+							background-color: var(--bt-blue)
+
+							transition-duration: 0.3s
+
+							&:hover
+								background-color: var(--color-blue-dark)
+
+							&.active
+								background-color: var(--color-blue-20)
+
+							img
+								max-width: 22px
+
+/* Doctor calendar for Modal end. */
 
 .doctor-about
 	display: flex
@@ -1297,14 +1741,14 @@ body
 							&.customSelect
 								width: 100%
 
-				.doctor-calendar
-					width: 300px
-					height: 100%
+					.doctor-calendar-mobile
+						display: none
 
-					border-radius: 10px
-					background-color: var(--bg-ultra-light-grey)
-
-					padding: 20px 5px
+						&.active
+							display: block
+							
+				.doctor-calendar-mobile
+					display: block
 
 /* DOCTOR MODAL STYLE SETTINGS END. */
 
@@ -1374,6 +1818,80 @@ body
 			border-radius: 10px
 			background-color: var(--bg-ultra-light-grey)
 			padding: 20px 10px
+
+		.container-catalog__row-05
+			display: none
+			justify-content: space-between
+			align-items: center
+
+			border-radius: 10px
+			background-color: var(--bg-ultra-light-grey)
+			padding: 10px 10px
+
+			cursor: pointer
+
+			p
+				font-size: 16px
+				line-height: 18px
+				font-weight: 400
+				color: var(--color-grey-80)
+
+			img
+				width: 24px
+				display: block
+
+				&:last-child
+					display: none
+
+			&.active
+				img
+					width: 24px
+					display: none
+
+					&:last-child
+						display: block
+
+		.container-catalog__row-06
+			display: none
+			flex-direction: column
+			row-gap: 10px
+
+			&.active
+				display: flex
+
+			.custom-select
+				.custom-select-container 
+					&.customSelect
+						width: 100%
+
+			.catalog-search
+				.catalog-search__input
+					width: 100%
+					background-color: var(--bg-ultra-light-grey)
+
+					font-size: 14px
+					font-weight: 400
+					color: var(--font-medium-grey)
+
+					background-image: url('../media/icons/icon_search.svg')
+					background-repeat: no-repeat
+					background-position: right 10px center
+					background-size: 24px
+
+					border: none
+					border-radius: 10px
+					background-color: var(--bg-ultra-light-grey)
+					padding: 10px 15px
+
+					transition: 0.2s
+
+					&::placeholder
+						font-size: 14px
+						font-weight: 400
+						color: var(--font-medium-grey)
+
+					&:focus
+						outline: 1px solid var(--color-grey-80)
 
 /* CATALOG PAGE STYLE SETTINGS END. */
 
@@ -1518,8 +2036,6 @@ body
 /* PRICE PAGE STYLE SETTINGS START: */
 
 .section-price
-	margin: 10px 0px 20px 0px
-
 	.container-price
 		display: flex
 		flex-direction: column
@@ -1606,3 +2122,20 @@ body
 						text-align: right
 
 /* PRICE PAGE STYLE SETTINGS END. */
+
+
+
+/* MAP'S STYLE STYLE SETTINGS START: */
+
+#map_01, #map_02
+	width: 100%
+	height: 100%
+
+div#map_01 a, 
+div#map_02 a,
+div#map_01 button, div#map_02 button,
+div.gm-bundled-control div.gmnoprint 
+	display: none !important
+
+/* MAP'S STYLE STYLE SETTINGS END. */
+
