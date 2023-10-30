@@ -59,6 +59,8 @@ jQuery("img.img-svg").each(function () {
 customSelect('.header-select select');
 customSelect('.doctor-select select');
 
+customSelect('.city-select select');
+
 customSelect('.catalog-speciality-select select');
 customSelect('.catalog-age-select select');
 customSelect('.catalog-category-select select');
@@ -90,6 +92,31 @@ jQuery('.header-slider').owlCarousel({
 
 /*--------------------------------------------------------------
 >>> HEADER SLIDER CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> FEEDBACK SLIDER CODE START:
+--------------------------------------------------------------*/
+
+jQuery('.feedback-slider').owlCarousel({
+    loop: true,
+    touchDrag: false,
+    mouseDrag: false,
+    nav: false,
+    dots: true,
+    autoWidth: false,
+    autoHeight: true,
+    autoplay: true,
+    items:1,
+    // animateOut: 'fadeOut',
+    smartSpeed: 2000,
+    margin: 10
+})
+
+/*--------------------------------------------------------------
+>>> FEEDBACK SLIDER CODE END.
 --------------------------------------------------------------*/
 
 
@@ -906,4 +933,18 @@ jQuery('.map-button').click(function(){
 
 /*--------------------------------------------------------------
 >>> GOOGLE MAPS CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> CITY SELECT CODE START:
+--------------------------------------------------------------*/
+
+jQuery('.confirm-city').click(function(){
+  jQuery('.section-notification__city-selector, .section-city').hide();
+})
+
+/*--------------------------------------------------------------
+>>> CITY SELECT  CODE END.
 --------------------------------------------------------------*/

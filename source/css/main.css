@@ -279,6 +279,29 @@ body {
 .input-block input:focus {
   outline: 1px solid var(--color-grey-80);
 }
+.input-block textarea {
+  width: 100%;
+  height: auto;
+  min-height: 100px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--font-medium-grey);
+  border: none;
+  border-radius: 10px;
+  background-color: var(--bg-ultra-light-grey);
+  padding: 15px 15px;
+  transition-duration: 0.2s;
+}
+.input-block textarea:placeholder {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--font-medium-grey);
+}
+.input-block textarea:focus {
+  outline: 1px solid var(--color-grey-80);
+}
 
 .custom-select .custom-select-container.customSelect {
   width: 180px;
@@ -415,10 +438,6 @@ body {
   border-radius: 10px;
   background-color: var(--bg-ultra-light-grey);
   transition-duration: 0.2s;
-  cursor: pointer;
-}
-.section-modal .container-modal .head-modal > div:hover {
-  outline: 1px solid var(--color-grey-80);
 }
 
 /* MODAL STYLE SETTINGS END. */
@@ -1288,6 +1307,84 @@ body {
   padding: 0px 5px;
 }
 
+.doctor-feedback {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  border-radius: 10px;
+  background-color: var(--bg-ultra-light-grey);
+  padding: 15px 15px;
+}
+.doctor-feedback .head > p {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--font-dark-grey);
+  text-transform: uppercase;
+}
+.doctor-feedback .body .feedback-slider .feedback-slide {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.doctor-feedback .body .feedback-slider .feedback-slide .head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 5px;
+}
+.doctor-feedback .body .feedback-slider .feedback-slide .head .icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--elements-light-grey);
+}
+.doctor-feedback .body .feedback-slider .feedback-slide .head p {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--font-dark-grey);
+  text-transform: initial;
+}
+.doctor-feedback .body .feedback-slider .feedback-slide .body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.doctor-feedback .body .feedback-slider .feedback-slide .body p {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--font-dark-grey);
+  text-transform: initial;
+}
+.doctor-feedback .body .feedback-slider .owl-dots {
+  display: inline-flex;
+  column-gap: 5px;
+  position: relative;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  background-color: var(--bg-white);
+  padding: 5px 5px;
+}
+.doctor-feedback .body .feedback-slider .owl-dots .owl-dot span {
+  background-color: var(--bg-white);
+  border: 1.2px solid var(--color-blue-100);
+  margin: 0px 0px;
+}
+.doctor-feedback .body .feedback-slider .owl-dots .owl-dot.active span, .doctor-feedback .body .feedback-slider .owl-dots .owl-dot:hover span {
+  background-color: var(--color-blue-100);
+}
+.doctor-feedback .footer .button {
+  width: 100%;
+  text-align: center;
+}
+
 /* Doctor calendar for Desktop start: */
 .doctor-calendar {
   height: 100%;
@@ -1542,6 +1639,12 @@ body {
 
 /* DOCTOR PAGE STYLE SETTINGS END. */
 /* DOCTOR MODAL STYLE SETTINGS START: */
+.section-modal__doctor .container-modal__doctor .head-modal > div {
+  cursor: pointer;
+}
+.section-modal__doctor .container-modal__doctor .head-modal > div:hover {
+  outline: 1px solid var(--color-grey-80);
+}
 .section-modal__doctor .container-modal__doctor .body-modal {
   display: flex;
   flex-direction: column;
@@ -1938,3 +2041,238 @@ div.gm-bundled-control div.gmnoprint {
 }
 
 /* MAP'S STYLE STYLE SETTINGS END. */
+/* DOCTOR MODAL CONFIRM STYLE SETTINGS START: */
+.section-modal__doctor-confirm {
+  max-width: 600px;
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal .field-block {
+  border-radius: 10px;
+  background-color: var(--bg-ultra-light-grey);
+  padding: 15px 10px;
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal .field-block a {
+  color: var(--color-blue-80);
+  text-decoration: underline;
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal .field-block span:first-child {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--color-grey-80);
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal .field-block span:last-child {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--color-grey-dark);
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal .field-block span.uppercase {
+  text-transform: uppercase;
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal .list {
+  border-radius: 10px;
+  background-color: var(--bg-ultra-light-grey);
+  padding: 15px 10px;
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal .list form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal .list form label {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--color-grey-80);
+  cursor: pointer;
+  padding: 0px 0px 0px 5px;
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal .modal-actions {
+  display: flex;
+  column-gap: 10px;
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal .modal-actions .button {
+  width: 50%;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  border-radius: 10px;
+  background-color: var(--bg-ultra-light-grey);
+  padding: 15px 10px;
+  transition-duration: 0.2s;
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal .modal-actions .button:focus {
+  outline: 1px solid var(--color-grey-80);
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal .modal-actions .button:first-child {
+  color: var(--font-dark-grey);
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal .modal-actions .button:last-child {
+  color: var(--font-blue);
+  background-color: var(--bt-light-blue);
+}
+.section-modal__doctor-confirm .container-modal__doctor-confirm .body-modal .modal-actions .button:last-child:hover {
+  color: var(--color-blue-dark);
+}
+
+/* DOCTOR MODAL CONFIRM STYLE SETTINGS END. */
+/* FEEDBACK MODAL STYLE SETTINGS START: */
+.section-modal__doctor-feedback {
+  max-width: 500px;
+}
+.section-modal__doctor-feedback .container-modal__doctor-feedback {
+  background-color: var(--bg-light-grey);
+}
+.section-modal__doctor-feedback .container-modal__doctor-feedback .head-modal {
+  padding: 0px 0px;
+}
+.section-modal__doctor-feedback .container-modal__doctor-feedback .head-modal > div {
+  cursor: pointer;
+}
+.section-modal__doctor-feedback .container-modal__doctor-feedback .head-modal > div:hover {
+  outline: 1px solid var(--color-grey-80);
+}
+.section-modal__doctor-feedback .container-modal__doctor-feedback .body-modal {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.section-modal__doctor-feedback .container-modal__doctor-feedback .body-modal .doctor-info {
+  padding: 30px 15px;
+}
+.section-modal__doctor-feedback .container-modal__doctor-feedback .body-modal .custom-form__feedback-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.section-modal__doctor-feedback .container-modal__doctor-feedback .body-modal .custom-form__feedback-form .custom-form__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.section-modal__doctor-feedback .container-modal__doctor-feedback .body-modal .custom-form__feedback-form .custom-form__footer .button {
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+.section-modal__doctor-feedback .container-modal__doctor-feedback .body-modal .custom-form__feedback-form .custom-form__footer .button:focus {
+  outline: 1px solid var(--color-grey-80);
+}
+
+/* FEEDBACK MODAL STYLE SETTINGS END. */
+/* NOTIFICATION STYLE SETTINGS START: */
+.section-notification .container-notification {
+  width: 300px;
+  height: auto;
+  position: fixed;
+  top: 20px;
+  right: 15px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  border-radius: 10px;
+  background-color: var(--bg-ultra-light-grey);
+  padding: 15px 10px;
+}
+.section-notification .container-notification .actions {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.section-notification .container-notification .actions p {
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--font-dark-grey);
+}
+.section-notification .container-notification .actions .button {
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+.section-notification .container-notification .actions .button:last-child {
+  color: var(--font-blue);
+  outline: none;
+  border: none;
+}
+.section-notification .container-notification .actions .button:last-child:hover {
+  color: var(--color-blue-dark);
+}
+
+/* NOTIFICATION STYLE SETTINGS END. */
+/* CITY SELECT MODAL STYLE SETTINGS START: */
+.section-modal__city-selector {
+  max-width: 500px;
+}
+.section-modal__city-selector .container-modal__city-selector {
+  background-color: var(--bg-light-grey);
+}
+.section-modal__city-selector .container-modal__city-selector .head-modal {
+  padding: 0px 0px;
+}
+.section-modal__city-selector .container-modal__city-selector .head-modal > div {
+  cursor: pointer;
+}
+.section-modal__city-selector .container-modal__city-selector .head-modal > div:hover {
+  outline: 1px solid var(--color-grey-80);
+}
+.section-modal__city-selector .container-modal__city-selector .body-modal {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.section-modal__city-selector .container-modal__city-selector .body-modal .custom-select.city-select .custom-select-container.customSelect {
+  width: 100%;
+}
+
+/* CITY SELECT MODAL STYLE SETTINGS END. */
+/* CITY SECTION STYLE SETTINGS START: */
+.section-city {
+  display: none;
+  margin: 0px 0px 10px 0px;
+}
+.section-city .container-city {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  background-color: var(--bg-ultra-light-grey);
+  border-radius: 10px;
+  padding: 15px 10px;
+}
+.section-city .container-city .actions {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.section-city .container-city .actions p {
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--font-dark-grey);
+}
+.section-city .container-city .actions .button {
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+.section-city .container-city .actions .button:last-child {
+  color: var(--font-blue);
+  outline: none;
+  border: none;
+}
+.section-city .container-city .actions .button:last-child:hover {
+  color: var(--color-blue-dark);
+}
+
+/* CITY SECTION STYLE SETTINGS END. */
